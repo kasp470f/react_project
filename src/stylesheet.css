@@ -6,3 +6,11 @@ div {
     background-color: red;
     padding: 10px;
 }
+
+.detailsrow {
+    display: flex;
+}
+  
+.detailscolumn {
+    flex: 50%;
+}
