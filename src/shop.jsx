@@ -7,4 +7,4 @@ function shop() {
     );
 }
 
-export default shop();
+export default shop;
