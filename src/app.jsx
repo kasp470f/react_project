@@ -4,8 +4,6 @@ import Shop from './shop';
 import Details from './details';
 
 function App() { 
-
-    //render multiple react functions at once
     return (
         <>
             <Navbar />

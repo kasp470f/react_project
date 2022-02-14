@@ -35,7 +35,7 @@ body {
     background-color: #dddddd;
     margin: 0 10px;
     border: black solid 1px;
-    width: 4vw;
+    width: calc(4vw);
     text-align: center;
 }
 
@@ -45,4 +45,42 @@ body {
 
 .navbar .shopping_cart {
     font-size: 25px;
+}
+
+/* Shop CSS */
+.grid-container {
+    margin: 10px;
+    display: grid;
+    grid-template-columns: 25% 75%;
+    gap: 10px
+}
+
+.itemGrid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 15px;
+} 
+
+.itemGrid > div {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    background-color: rgb(95, 95, 95);
+    text-align: center;
+}
+
+.itemGrid div img {
+    width: 80%;
+    height: 80%;
+}
+
+.itemTag {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 2;
+    background: gray;
+    width: 100%;
+    text-align: center;
+    padding: 3.5% 0;
 }
