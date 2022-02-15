@@ -7,10 +7,11 @@ body {
 .detailsrow {
     display: flex;
 }
-  
+
 .detailscolumn {
-    flex: 50%;
-  
+    flex: 25%;
+    padding: 0 10px;
+}
   
 /* Navbar CSS */
 .navbar {
