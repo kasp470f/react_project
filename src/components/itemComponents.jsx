@@ -3,8 +3,11 @@ import React from "react";
 import "../stylesheet.css";
 
 function ItemComponent(props) {
+    function onClick() {
+        props.onSelect(props.id);
+    }
     return (
-        <div>
+        <div onClick={onClick}>
             <img src={require("../assets/" + props.icon + ".png")} />
             <div class="itemTag" style={{ color: RarityColor(props) }}>{props.name}</div>
         </div>

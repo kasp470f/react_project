@@ -9,7 +9,14 @@ class Shop extends React.Component {
         let itemsGen = RandomItemCollection(12);
         this.state = {
             items: itemsGen,
+            selection: ""
         };
+        this.onSelect = this.onSelect.bind(this);
+    }
+
+    onSelect(id) {
+        this.setState({ selection: id });
+        console.log(id);
     }
 
     render() {
@@ -23,7 +30,7 @@ class Shop extends React.Component {
                 </div>
                 <div class="itemGrid">
                     {this.state.items.map(item => (
-                        <ItemComponent key={item.id} {...item} /> // spread syntax
+                        <ItemComponent key={item.id} {...item} onSelect={this.onSelect}/> // spread syntax
                     ))}
                 </div>
             </div>
