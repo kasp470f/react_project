@@ -1,11 +1,12 @@
 import { types, rarities } from "./itemText";
 
-function RandomItem() {
+function RandomItem(uniqueID) {
     let type = types[Math.floor(Math.random() * types.length)];
     let rarity = rarities[Math.floor(Math.random() * rarities.length)];
     let name = type
 
     return {
+        id: uniqueID,
         type: type,
         rarity: rarity,
         name: name,
@@ -17,4 +18,12 @@ function RandomItem() {
     };
 }
 
-export default RandomItem;
+function RandomItemCollection(count) {
+    let items = [];
+    for (let i = 0; i < count; i++) {
+        items.push(RandomItem(i));
+    }
+    return items;
+}
+
+export default RandomItemCollection;
