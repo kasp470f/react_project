@@ -3,8 +3,11 @@ import React from "react";
 import "../stylesheet.css";
 
 function ItemComponent(props) {
+    function onClick() {
+        props.onSelect(props.id);
+    }
     return (
-        <div style={{ background: "radial-gradient(circle, "+ RarityColor(props) +" -500px, #5f5f5f)" }}>
+        <div onClick={onClick} style={{ background: "radial-gradient(circle, "+ RarityColor(props) +" -500px, #5f5f5f)" }}>
             <img src={require("../assets/" + props.icon + ".png")} />
             <div class="itemTag" style={{ color: RarityColor(props) }}>{props.name}</div>
         </div>

@@ -9,7 +9,14 @@ class Shop extends React.Component {
         let itemsGen = RandomItemCollection(12);
         this.state = {
             items: itemsGen,
+            selection: ""
         };
+        this.onSelect = this.onSelect.bind(this);
+    }
+
+    onSelect(id) {
+        this.setState({ selection: id });
+        console.log(id);
     }
 
     render() {
@@ -23,23 +30,12 @@ class Shop extends React.Component {
                 </div>
                 <div class="itemGrid">
                     {this.state.items.map(item => (
-                        <ItemComponent key={item.id} {...item} /> // Spread Syntax
+                        <ItemComponent key={item.id} {...item} onSelect={this.onSelect}/> // Spread Syntax
                     ))}
                 </div>
             </div>
         );
     }
-}
-
-function FilterComponent() {
-    return (
-        <div class="leftNavBar">
-            <p>KASPER WISSENDORF ER:</p>
-            <p>A</p>
-            <p>B</p>
-            <p>C</p>
-        </div>
-    );
 }
 
 

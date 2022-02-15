@@ -1,22 +1,26 @@
 import React from "react";
 import './stylesheet.css';
 
-function Details() {
+function Details(props) {
+    let itemInfo=props.Items[props.id];
     return (
         <>
+            <button onClick={props.onClose}>Close</button>
             <div className="detailsrow">
                 <div className="detailscolumn">
                     <div>
-                        <img src="https://www.w3schools.com/html/pic_trulli.jpg" alt="pic unloaded" />
+                        <img src={itemInfo.icon} alt="text" />
                     </div>
-                    <h3>Timer: <i>0:00:01</i> Price: <i>5.00</i> $</h3>
+                    <h3>Timer: <i>0:00:01</i> Price: <i>{itemInfo.price}</i> $</h3>
                 </div>
                 <div className="detailscolumn">
                     <h1>Item info:</h1>
-                    <h3>Strength: <i>100</i></h3>
-                    <h3>Stamina: <i>150</i></h3>
-                    <h3>Crit chance: <i>2.0</i>%</h3>
-                    <h3>Crit damage: <i>10.0</i>%</h3>
+                    <h3>Item Name: {itemInfo.name}</h3>
+                    <h3>Rarity: {itemInfo.rarity}</h3>
+                    <h3>Type: {itemInfo.type}</h3>
+                    <h3>Amount: {itemInfo.amount}</h3>
+                    <h3>{itemInfo.stats}</h3>          
+                    <h6>{itemInfo.description}</h6>
                 </div>
             </div>
         </>
