@@ -8,10 +8,8 @@ function Navbar() {
                 <div id="logo">Dungeon Loot Web-Shop</div>
                 <div class="redirects">
                     <ul>
-                        <li><a href="">1</a></li>
-                        <li><a href="">2</a></li>
-                        <li><a href="">3</a></li>
-                        <li><a href="">4</a></li>
+                        <li><a href="">Loot</a></li>
+                        <li><a href="">Auction</a></li>
                     </ul>
                 </div>
                 <div class="search_bar">
