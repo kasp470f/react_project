@@ -2,14 +2,14 @@ import React from "react";
 import './stylesheet.css';
 
 function Details(props) {
-    let itemInfo = props.Items[props.id];
+    let itemInfo = props.items[props.itemID];
     return (
         <>
             <button onClick={props.onClose}>Close</button>
             <div className="detailsrow">
                 <div className="detailscolumn">
                     <div>
-                        <img src={itemInfo.icon} alt="text" />
+                        <Icon icon={props.icon}/>
                     </div>
                     <h3>Timer: <i>0:00:01</i> Price: <i>{itemInfo.price}</i> $</h3>
                 </div>
@@ -25,6 +25,15 @@ function Details(props) {
             </div>
         </>
     );
+}
+
+function Icon(props) {
+    if(typeof (props.icon) !== 'undefined'){
+        return <img src={require("./assets/" + props.icon + ".png")}/>
+    }
+    else {
+        return null;
+    }
 }
 
 export default Details;

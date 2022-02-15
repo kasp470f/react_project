@@ -1,36 +1,24 @@
 import React from "react";
 import './stylesheet.css';
 import ItemComponent from "./components/itemComponents";
-import RandomItemCollection from "./generator/itemGenerator";
 
 class Shop extends React.Component {
-    constructor() {
+    constructor(props) {
         super();
-        let itemsGen = RandomItemCollection(12);
         this.state = {
-            items: itemsGen,
-            selection: ""
+            items: props.items,
         };
-        this.onSelect = this.onSelect.bind(this);
-    }
-
-    onSelect(id) {
-        this.setState({ selection: id });
-        console.log(id);
     }
 
     render() {
         return (
-            <div class="grid-container">
-                <div class="leftNavBar">
-                    <p>KASPER WISSENDORF ER:</p>
-                    <p>A</p>
-                    <p>B</p>
-                    <p>C</p>
+            <div className="grid-container">
+                <div className="leftNavBar">
+                    <h3>Filters: </h3>
                 </div>
-                <div class="itemGrid">
+                <div className="itemGrid">
                     {this.state.items.map(item => (
-                        <ItemComponent key={item.id} {...item} onSelect={this.onSelect}/> // Spread Syntax
+                        <ItemComponent key={item.id} {...item} onSelect={this.props.onSelect}/> // Spread Syntax
                     ))}
                 </div>
             </div>
