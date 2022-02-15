@@ -3,6 +3,15 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+/* Details CSS */
+.detailsrow {
+    display: flex;
+}
+  
+.detailscolumn {
+    flex: 50%;
+  
+  
 /* Navbar CSS */
 .navbar {
     background-color: rgb(175, 175, 175);
