@@ -2,7 +2,7 @@ import React from "react";
 import './stylesheet.css';
 
 function Details(props) {
-    let itemInfo=props.Items[props.id];
+    let itemInfo = props.Items[props.id];
     return (
         <>
             <button onClick={props.onClose}>Close</button>
