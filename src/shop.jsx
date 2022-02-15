@@ -1,5 +1,6 @@
 import React from "react";
 import './stylesheet.css';
+import ItemComponent from "./components/itemComponents";
 
 function Shop() {
     return (
@@ -11,22 +12,17 @@ function Shop() {
                 <p>C</p>
             </div>
             <div class="itemGrid">
-                <div>
-                    <img src={require("./assets/ring.png")}/>
-                    <div class="itemTag">Ring</div>
-                </div>
-                <div>
-                    <img src={require("./assets/chestplate.png")}/>
-                    <div class="itemTag">Chestplate</div>
-                </div>
-                <div>
-                    <img src={require("./assets/gem.png")}/>
-                    <div class="itemTag">Gem</div>
-                </div>
-                <div>
-                    <img src={require("./assets/sword.png")}/>
-                    <div class="itemTag">Sword</div>
-                </div>
+                <ItemComponent />
+                <ItemComponent />
+                <ItemComponent />
+                <ItemComponent />
+                <ItemComponent />
+                <ItemComponent />
+                <ItemComponent />
+                <ItemComponent />
+                <ItemComponent />
+                <ItemComponent />
+                <ItemComponent />
             </div>
         </div>
     );
