@@ -4,7 +4,7 @@ import "../stylesheet.css";
 
 function ItemComponent(props) {
     return (
-        <div>
+        <div style={{ background: "radial-gradient(circle, "+ RarityColor(props) +" -500px, #5f5f5f)" }}>
             <img src={require("../assets/" + props.icon + ".png")} />
             <div class="itemTag" style={{ color: RarityColor(props) }}>{props.name}</div>
         </div>
@@ -13,16 +13,15 @@ function ItemComponent(props) {
 
 function RarityColor(props) {
     if (props.rarity === "common") {
-        return "black";
+        return "#000000";
     } else if (props.rarity === "uncommon") {
-        return "limegreen";
+        return "#00ff44";
     } else if (props.rarity === "rare") {
-        return "blue";
+        return "#003cff";
     } else if (props.rarity === "epic") {
-        return "purple";
-    }
-    else if (props.rarity === "legendary") {
-        return "orange";
+        return "#aa00ff";
+    } else if (props.rarity === "legendary") {
+        return "#ffa600";
     }
 }
 

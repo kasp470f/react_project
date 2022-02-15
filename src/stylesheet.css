@@ -75,7 +75,7 @@ body {
     position: relative;
     width: 200px;
     height: 200px;
-    background-color: rgb(95, 95, 95);
+    /* background-color: rgb(95, 95, 95); */
     text-align: center;
 }
 
