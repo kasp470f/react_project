@@ -6,13 +6,11 @@ import Details from './details';
 function App() { 
     return (
         <>
-            <Navbar />,
-
-            {/* <Shop />,
-
-            <Details />, */}
+            <Navbar />
+            <Shop />
+            <Details />
         </>
-    )
+    );
 }
 
 

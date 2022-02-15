@@ -1,16 +1,95 @@
 body {
     margin: 0;
+    font-family: 'Roboto', sans-serif;
 }
 
-div {
-    background-color: red;
-    padding: 10px;
-}
-
+/* Details CSS */
 .detailsrow {
     display: flex;
 }
   
 .detailscolumn {
     flex: 50%;
+  
+  
+/* Navbar CSS */
+.navbar {
+    background-color: rgb(175, 175, 175);
+    display: flex;
+    padding: 10px 30px;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: black solid 1px;
+}
+
+#logo {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.navbar .redirects ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.navbar .redirects li {
+    float: left;
+}
+
+.navbar .redirects li a {
+    display: block;
+    padding: 8px;
+    background-color: #dddddd;
+    margin: 0 10px;
+    border: black solid 1px;
+    width: calc(4vw);
+    text-align: center;
+}
+
+.navbar .search_bar span {
+    margin: 0 10px;
+}
+
+.navbar .shopping_cart {
+    font-size: 25px;
+}
+
+/* Shop CSS */
+.grid-container {
+    margin: 10px;
+    display: grid;
+    grid-template-columns: 25% 75%;
+    gap: 10px
+}
+
+.itemGrid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 15px;
+} 
+
+.itemGrid > div {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    background-color: rgb(95, 95, 95);
+    text-align: center;
+}
+
+.itemGrid div img {
+    width: 80%;
+    height: 80%;
+}
+
+.itemTag {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 2;
+    background: gray;
+    width: 100%;
+    text-align: center;
+    padding: 3.5% 0;
 }
