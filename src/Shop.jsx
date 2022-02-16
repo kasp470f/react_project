@@ -13,12 +13,12 @@ class Shop extends React.Component {
     render() {
         return (
             <div className="grid-container">
-                <div className="leftNavBar">
+                <div className="leftFilter">
                     <h3>Filters: </h3>
                 </div>
                 <div className="itemGrid">
                     {this.state.items.map(item => (
-                        <ItemComponent key={item.id} {...item} onSelect={this.props.onSelect}/> // Spread Syntax
+                        <ItemComponent key={item.id} {...item} onSelect={this.props.onSelect}/> // Spread Syntax and Map
                     ))}
                 </div>
             </div>

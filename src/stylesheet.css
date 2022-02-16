@@ -1,6 +1,20 @@
 body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
+
+    background-color: #382e24;
+    /* background-image: url(https://assets.dicebreaker.com/dungeons-and-dragons-lost-mine-of-phandelver-campaign-sourcebook.jpg/BROK/resize/1200x1200%3E/format/jpg/quality/70/dungeons-and-dragons-lost-mine-of-phandelver-campaign-sourcebook.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    backdrop-filter: blur(5px); */
+}
+
+/* root with variables */
+:root {
+    --primary-color: #4a3c30;
+    --secondary-color: #8c441c;
+    --tertiary-color: #ad9a78;
 }
 
 /* Details CSS */
@@ -26,13 +40,14 @@ body {
   
 /* Navbar CSS */
 .navbar {
-    background-color: rgb(175, 175, 175);
+    background-color: var(--primary-color);
     display: flex;
     padding: 10px 30px;
     justify-content: space-between;
     align-items: center;
     border-bottom: black solid 1px;
     margin-bottom: 3vh;
+    color: white;
 }
 
 #logo {
@@ -60,6 +75,8 @@ body {
     border: black solid 1px;
     width: fit-content;
     text-align: center;
+    color: black;
+    font-weight: bold;
 }
 
 .navbar .search_bar span {
@@ -78,6 +95,11 @@ body {
     gap: 10px
 }
 
+.leftFilter {
+    background-color: rgb(175, 175, 175);
+    padding: 2vh;
+}
+
 .itemGrid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -89,6 +111,7 @@ body {
     width: 200px;
     height: 200px;
     text-align: center;
+    border: black solid 2px;
 }
 
 .itemGrid div img {
@@ -120,7 +143,7 @@ body {
     width: 100%;
 
     /* Style the item tag */
-    background: #ad9a78;
+    background: var(--tertiary-color);
     text-align: center;
     padding: 3.5% 0;
     font-weight: bold;
