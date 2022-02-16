@@ -126,3 +126,10 @@ body {
     font-weight: bold;
     text-transform: uppercase;
 }
+.filterButton {
+    display: block;
+    width: 8em;
+    font-size: 32px;    
+    text-align: left;
+    background-color: #dddddd;
+}
