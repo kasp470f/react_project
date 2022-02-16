@@ -31,6 +31,10 @@ function Details(props) {
                             <p>Description:</p>
                             <p>{itemInfo.description}</p>
                         </div>
+
+                        <h1>Time remaining: 00:00:00</h1>
+
+                        <button>Buy</button>
                     </div>
                 </div>
             </div>

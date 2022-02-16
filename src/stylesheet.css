@@ -136,7 +136,7 @@ body {
 
 .leftFilter {
     background-color: var(--tertiary-color);
-    padding: 0 2vh;
+    padding: 0 2vh 3vh;
     border: black solid 2px;
     color: white;
 }
@@ -149,7 +149,7 @@ body {
 
 .itemGrid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 1rem;
 } 
 
@@ -195,4 +195,12 @@ body {
     padding: 3.5% 0;
     font-weight: bold;
     text-transform: uppercase;
+}
+
+.filterButton {
+    display: block;
+    width: 8em;
+    font-size: 32px;    
+    text-align: left;
+    background-color: #dddddd;
 }

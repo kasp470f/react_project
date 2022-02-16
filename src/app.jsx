@@ -9,7 +9,7 @@ import './stylesheet.css';
 class App extends React.Component {
     constructor() {
         super();
-        let itemsGen = RandomItemCollection(12);
+        let itemsGen = RandomItemCollection(12);        
         this.state = {
             items: itemsGen,
             selection: "",
