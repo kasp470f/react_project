@@ -4,7 +4,7 @@ import RarityColor from "./components/itemRarity";
 
 function Details(props) {
     let itemInfo = props.items[props.itemID];
-    console.log(itemInfo.icon)
+    
     return (
         <>
             <button onClick={props.onClose}>Close</button>

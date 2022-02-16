@@ -7,6 +7,7 @@ function ItemComponent(props) {
     function onClick() {
         props.onSelect(props.id);
     }
+    
     return (
         <div onClick={onClick} style={{ background: "radial-gradient(circle, "+ RarityColor(props) +" -300%, #5f5f5f)" }}>
             <img src={require("../assets/" + props.icon + ".png")} />
