@@ -21,15 +21,15 @@ function Shop(props) {
     const itemsList = props.items
         .filter(FILTER_MAP[filter]);
 
-    const filterButtons=FILTER_NAMES.map(btnName=>(
-        <FilterButton 
-        key={btnName} 
-        name={btnName}
-        isPressed={btnName===filter}
-        setFilter={setFilter}
+    const filterButtons = FILTER_NAMES.map(btnName => (
+        <FilterButton
+            key={btnName}
+            name={btnName}
+            isPressed={btnName === filter}
+            setFilter={setFilter}
         />
     ));
-    
+
     return (
         <div className="grid-container">
             <div className="leftNavBar">
@@ -50,8 +50,8 @@ function FilterButton(props) {
         <button
             type="button"
             aria-pressed={props.isPressed}
-            onClick={() => props.setFilter(props.name)}            
-            name={props.name}>            
+            onClick={() => props.setFilter(props.name)}
+            name={props.name}>
             <span>{props.name}</span>
         </button>
     );
