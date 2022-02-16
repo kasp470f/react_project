@@ -4,8 +4,14 @@ import ItemComponent from "./components/itemComponents";
 
 const FILTER_MAP = {
     All: () => true,
-    Ring: item => item.type === "ring",
-    Helm: item => item.type === "helmet"
+    Chestplates: item => item.type === "chestplate",
+    Boots: item => item.type === "boots",
+    Helmets: item => item.type === "helmet",
+    Leggings: item => item.type === "leggings",
+    Swords: item => item.type === "sword",
+    Gems: item => item.type === "gem",
+    Meat: item => item.type === "meat",
+    Rings: item => item.type === "ring"
 };
 
 const FILTER_NAMES = Object.keys(FILTER_MAP);
