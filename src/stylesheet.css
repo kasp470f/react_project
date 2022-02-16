@@ -1,43 +1,83 @@
+:root {
+    --background-color: #382e24;
+
+    --primary-color: #4a3c30;
+    --secondary-color: #5e544c;
+    --tertiary-color: #ad9a78;
+}
+
 body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
 
-    background-color: #382e24;
-    /* background-image: url(https://assets.dicebreaker.com/dungeons-and-dragons-lost-mine-of-phandelver-campaign-sourcebook.jpg/BROK/resize/1200x1200%3E/format/jpg/quality/70/dungeons-and-dragons-lost-mine-of-phandelver-campaign-sourcebook.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    backdrop-filter: blur(5px); */
-}
-
-/* root with variables */
-:root {
-    --primary-color: #4a3c30;
-    --secondary-color: #8c441c;
-    --tertiary-color: #ad9a78;
+    background-color: var(--background-color);
 }
 
 /* Details CSS */
-.detailsrow {
-    display: flex;
-    margin-left: 8vw;
-}
-  
-.detailscolumn {
-    flex: 50%;
-}  
+.detailsGrid {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: 1fr min-content;
+    grid-template-areas: "itemImage itemInfo" "itemPrice itemInfo";
+    gap: 1rem;
+    padding: 0 2rem;
 
-.detailscolumn div div {
-    padding: 2vw;
+    color: white;
+}
+
+.detailsColumn div.detailsImageContainer {
     width: fit-content;
     text-align: center;
 }
 
-.detailscolumn div div img {
+.detailsColumn div div img {
     filter: drop-shadow(2px 4px 6px black);
     width: 80%;
+    padding: 2vh;
 }
-  
+
+.detailsInfo {
+    text-align: center;
+    background-color: var(--tertiary-color);
+    padding: 10px;
+    height: 96.5%;
+}
+
+.itemPrice {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    background-color: var(--tertiary-color);
+}
+
+.detailsColumn .itemPrice i {
+    font-weight: normal;
+    text-decoration: underline;
+}
+
+.itemDescription {
+    text-align: center;
+    padding: 2vh;
+}
+
+.itemDescription p:first-child {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 0;
+}
+
+#info {
+    grid-area: itemInfo;
+}
+
+#image {
+    grid-area: itemImage;
+}
+
+#price {
+    grid-area: itemPrice;
+}
+
 /* Navbar CSS */
 .navbar {
     background-color: var(--primary-color);
@@ -45,7 +85,7 @@ body {
     padding: 10px 30px;
     justify-content: space-between;
     align-items: center;
-    border-bottom: black solid 1px;
+    border-bottom: black solid 2px;
     margin-bottom: 3vh;
     color: white;
 }
@@ -70,12 +110,11 @@ body {
 .navbar .redirects li span {
     display: block;
     padding: 8px 20px;
-    background-color: #dddddd;
+    background-color: var(--tertiary-color);
     margin: 0 10px;
     border: black solid 1px;
     width: fit-content;
     text-align: center;
-    color: black;
     font-weight: bold;
 }
 
@@ -96,8 +135,16 @@ body {
 }
 
 .leftFilter {
-    background-color: rgb(175, 175, 175);
-    padding: 2vh;
+    background-color: var(--tertiary-color);
+    padding: 0 2vh;
+    border: black solid 2px;
+    color: white;
+}
+
+.leftFilter h3 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 25px;
 }
 
 .itemGrid {

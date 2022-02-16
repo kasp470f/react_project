@@ -29,7 +29,6 @@ class App extends React.Component {
     render() {
         return (
             <>
-                <div class="bodyBackground"></div>
                 <Navbar onClose={this.onClose} />
                 {this.state.selection === "" ?
                     <Shop items={this.state.items} onSelect={this.onSelect} />

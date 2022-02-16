@@ -14,7 +14,7 @@ function RandomItem(uniqueID) {
         price: price,
         stats: [],
         amount: 0,
-        description: "",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer et ante ac ante luctus congue. Sed tempor, dolor vulputate consectetur dapibus, nibh magna dapibus nisl, vel ornare odio nibh et nisl.",
         icon: type,
     };
 }

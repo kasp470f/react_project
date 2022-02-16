@@ -14,7 +14,7 @@ class Shop extends React.Component {
         return (
             <div className="grid-container">
                 <div className="leftFilter">
-                    <h3>Filters: </h3>
+                    <h3>Filters</h3>
                 </div>
                 <div className="itemGrid">
                     {this.state.items.map(item => (
