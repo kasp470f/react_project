@@ -6,11 +6,23 @@ body {
 /* Details CSS */
 .detailsrow {
     display: flex;
+    margin-left: 8vw;
 }
   
 .detailscolumn {
     flex: 50%;
 }  
+
+.detailscolumn div div {
+    padding: 2vw;
+    width: fit-content;
+    text-align: center;
+}
+
+.detailscolumn div div img {
+    filter: drop-shadow(2px 4px 6px black);
+    width: 80%;
+}
   
 /* Navbar CSS */
 .navbar {
@@ -37,15 +49,16 @@ body {
 
 .navbar .redirects li {
     float: left;
+    cursor: pointer;
 }
 
-.navbar .redirects li a {
+.navbar .redirects li span {
     display: block;
-    padding: 8px;
+    padding: 8px 20px;
     background-color: #dddddd;
     margin: 0 10px;
     border: black solid 1px;
-    width: calc(4vw);
+    width: fit-content;
     text-align: center;
 }
 
@@ -67,15 +80,15 @@ body {
 
 .itemGrid {
     display: grid;
-    grid-template-columns: auto auto auto auto;
-    gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
 } 
 
 .itemGrid > div {
     position: relative;
     width: 200px;
     height: 200px;
-    background-color: rgb(95, 95, 95);
+    /* background-color: rgb(95, 95, 95); */
     text-align: center;
 }
 
@@ -108,7 +121,7 @@ body {
     width: 100%;
 
     /* Style the item tag */
-    background: gray;
+    background: #ad9a78;
     text-align: center;
     padding: 3.5% 0;
     font-weight: bold;
