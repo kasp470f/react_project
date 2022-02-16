@@ -48,7 +48,6 @@ function Shop(props) {
 function FilterButton(props) {
     return (
         <button
-            type="button"
             aria-pressed={props.isPressed}
             onClick={() => props.setFilter(props.name)}
             name={props.name}>
