@@ -1,15 +1,19 @@
 import React from "react";
 import './stylesheet.css';
+import RarityColor from "./components/itemRarity";
 
 function Details(props) {
     let itemInfo = props.items[props.itemID];
+    console.log(itemInfo.icon)
     return (
         <>
             <button onClick={props.onClose}>Close</button>
             <div className="detailsrow">
                 <div className="detailscolumn">
                     <div>
-                        <Icon icon={props.icon}/>
+                        <div style={{ background: "radial-gradient(circle, "+ RarityColor(itemInfo) +" -300%, #5f5f5f)", width:"fit-content"}}>
+                            <img src={require("./assets/" + itemInfo.icon + ".png")}/>
+                        </div>
                     </div>
                     <h3>Timer: <i>0:00:01</i> Price: <i>{itemInfo.price}</i> $</h3>
                 </div>
@@ -25,15 +29,6 @@ function Details(props) {
             </div>
         </>
     );
-}
-
-function Icon(props) {
-    if(typeof (props.icon) !== 'undefined'){
-        return <img src={require("./assets/" + props.icon + ".png")}/>
-    }
-    else {
-        return null;
-    }
 }
 
 export default Details;

@@ -4,13 +4,14 @@ function RandomItem(uniqueID) {
     let type = types[Math.floor(Math.random() * types.length)];
     let rarity = rarities[Math.floor(Math.random() * rarities.length)];
     let name = type
+    let price = Math.floor(Math.random() * 100) + 1;
 
     return {
         id: uniqueID,
         type: type,
         rarity: rarity,
         name: name,
-        price: 0,
+        price: price,
         stats: [],
         amount: 0,
         description: "",

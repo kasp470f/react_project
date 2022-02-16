@@ -6,11 +6,23 @@ body {
 /* Details CSS */
 .detailsrow {
     display: flex;
+    margin-left: 8vw;
 }
   
 .detailscolumn {
     flex: 50%;
 }  
+
+.detailscolumn div div {
+    padding: 2vw;
+    width: fit-content;
+    text-align: center;
+}
+
+.detailscolumn div div img {
+    filter: drop-shadow(2px 4px 6px black);
+    width: 80%;
+}
   
 /* Navbar CSS */
 .navbar {
@@ -68,8 +80,8 @@ body {
 
 .itemGrid {
     display: grid;
-    grid-template-columns: auto auto auto auto;
-    gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
 } 
 
 .itemGrid > div {
