@@ -1,14 +1,14 @@
 export let types = [
-    "Chestplate",
-    "Boots",
     "Helmet",
+    "Chestplate",
     "Leggings",
+    "Boots",
     "Sword",
-    "Gem",
-    "Meat",
     "Ring",
     "Amulet",
     "Potion",
+    "Gem",
+    "Meat",
     "Drop"
 ]
 
