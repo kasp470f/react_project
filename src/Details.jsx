@@ -22,10 +22,10 @@ function Details(props) {
                 <div className="detailsColumn" id="info">
                     <div className="detailsInfo">
                         <h1>Item info:</h1>
-                        <p>Item Name: {itemInfo.name}</p>
-                        <p>Rarity: {itemInfo.rarity}</p>
-                        <p>Type: {itemInfo.type}</p>
-                        <p>Amount: {itemInfo.amount}</p>
+                        <p>Item Name: <i>{itemInfo.name}</i></p>
+                        <p>Rarity: <i>{itemInfo.rarity}</i></p>
+                        <p>Type: <i>{itemInfo.type}</i></p>
+                        <p>Amount: <i>{itemInfo.amount}</i></p>
                         <p>{itemInfo.stats}</p>
                         <div className="itemDescription">
                             <p>Description:</p>

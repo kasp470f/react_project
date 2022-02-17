@@ -1,24 +1,15 @@
 import React, { useState } from "react";
 import './stylesheet.css';
 import ItemComponent from "./components/itemComponents";
+import { types } from "./generator/itemText";
 
-const FILTER_MAP = {
-    All: () => true,
-    Chestplates: item => item.type === "Chestplate",
-    Boots: item => item.type === "Boots",
-    Helmets: item => item.type === "Helmet",
-    Leggings: item => item.type === "Leggings",
-    Swords: item => item.type === "Sword",
-    Gems: item => item.type === "Gem",
-    Meat: item => item.type === "Meat",
-    Rings: item => item.type === "Ring"
-};
+const FILTER_MAP = MapFilters();
+
+console.log(FILTER_MAP)
 
 function Shop(props) {
-    const filtering = useFilter();
-    //const [filter, setFilter] = useState('All');  //it's a hook!!
-    const itemsList = props.items
-        .filter(FILTER_MAP[filtering.selection]);
+    const filtering = useFilter(); // It's a custom hook!!
+    const itemsList = props.items.filter(FILTER_MAP[filtering.selection]);
 
     return (
         <div className="grid-container">
@@ -47,10 +38,23 @@ function useFilter() {
 function FilterButton(props) {
     return (
         // callback function is passed as a prop
-        <button className="filterButton" aria-pressed={props.isPressed} onClick={() => props.setFilter(props.name)}>
+        <div className="filterButton" aria-pressed={props.isPressed} onClick={() => props.setFilter(props.name)}>
             {props.name}
-        </button>
+        </div>
     );
+}
+
+function MapFilters() {
+
+    const filters = {
+        All: () => true,
+    };
+    
+    types.forEach(type => {
+        filters[type] = item => item.type === type;
+    });
+
+    return filters;
 }
 
 export default Shop;

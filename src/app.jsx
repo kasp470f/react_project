@@ -9,10 +9,9 @@ import './stylesheet.css';
 class App extends React.Component {
     constructor() {
         super();
-        let itemsGen = RandomItemCollection(25);        
+        let itemsGen = RandomItemCollection(40);        
         this.state = {
             items: itemsGen,
-            currentKey: itemsGen.length,
             selection: "",
         }
         this.onSelect = this.onSelect.bind(this);
@@ -25,7 +24,7 @@ class App extends React.Component {
             this.setState({
                 items: this.state.items.map(item => {
                     if (item.id === id) {
-                        return RandomItem(this.state.currentKey++);
+                        return RandomItem(id);
                     }
                     if (this.state.selection === id) {
                         this.setState({ selection: "" });

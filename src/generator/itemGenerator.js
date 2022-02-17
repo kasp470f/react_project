@@ -5,7 +5,7 @@ export function RandomItem(uniqueID) {
     let rarity = rarities[Math.floor(Math.random() * rarities.length)];
     let name = itemNames[type][Math.floor(Math.random() * itemNames[type].length)];
     let price = Math.floor(Math.random() * 100) + 1;
-    let amount = (type === "Gem" || type === "Meat") ? Math.floor(Math.random() * 10) + 1 : 1;
+    let amount = (type === "Gem" || type === "Meat" || type === "Potion" || type === "Drop") ? Math.floor(Math.random() * 10) + 1 : 1;
 
     return {
         id: uniqueID,
