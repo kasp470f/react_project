@@ -4,21 +4,21 @@ import ItemComponent from "./components/itemComponents";
 
 const FILTER_MAP = {
     All: () => true,
-    Chestplates: item => item.type === "chestplate",
-    Boots: item => item.type === "boots",
-    Helmets: item => item.type === "helmet",
-    Leggings: item => item.type === "leggings",
-    Swords: item => item.type === "sword",
-    Gems: item => item.type === "gem",
-    Meat: item => item.type === "meat",
-    Rings: item => item.type === "ring"
+    Chestplates: item => item.type === "Chestplate",
+    Boots: item => item.type === "Boots",
+    Helmets: item => item.type === "Helmet",
+    Leggings: item => item.type === "Leggings",
+    Swords: item => item.type === "Sword",
+    Gems: item => item.type === "Gem",
+    Meat: item => item.type === "Meat",
+    Rings: item => item.type === "Ring"
 };
 
 const FILTER_NAMES = Object.keys(FILTER_MAP);
 
 
 function Shop(props) {
-    const [filter, setFilter] = useState('All');  //it's a hook!!
+    const [filter, setFilter] = useState('All');  // It's a hook!!
     const itemsList = props.items
         .filter(FILTER_MAP[filter]);
 

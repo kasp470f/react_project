@@ -12,7 +12,7 @@ function Details(props) {
                 <div className="detailsColumn" id="image">
                     <div className="detailsImageContainer">
                         <div style={{ background: "radial-gradient(circle, " + RarityColor(itemInfo) + " -300%, #5f5f5f)" }}>
-                            <img src={require("./assets/" + itemInfo.icon + ".png")} />
+                            <img src={require("./assets/" + itemInfo.icon)} alt="the Game Object"/>
                         </div>
                     </div>
                 </div>
@@ -31,8 +31,6 @@ function Details(props) {
                             <p>Description:</p>
                             <p>{itemInfo.description}</p>
                         </div>
-
-                        <h1>Time remaining: 00:00:00</h1>
 
                         <button>Buy</button>
                     </div>

@@ -182,6 +182,8 @@ body {
 }
 
 .itemTag {
+    font-size: 90%;
+
     /* Make it appear over the image */
     position: absolute;
     left: 0;
