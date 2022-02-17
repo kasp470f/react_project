@@ -12,11 +12,11 @@ function Navbar(props) {
                         <li onClick={props.onClose}><span>Auction</span></li>
                     </ul>
                 </div>
-                <div className="search_bar">
+                {/* <div className="search_bar">
                     <span>Search Bar</span>
                     <input/>
-                </div>
-                <div className="shopping_cart">🛒</div>
+                </div> */}
+                <div className="shopping_cart">Basket 🛒</div>
             </div>
         </>
     );

@@ -16,25 +16,19 @@ const FILTER_MAP = {
 
 const FILTER_NAMES = Object.keys(FILTER_MAP);
 
+
 function Shop(props) {
     const [filter, setFilter] = useState('All');  //it's a hook!!
     const itemsList = props.items
         .filter(FILTER_MAP[filter]);
 
-    const filterButtons = FILTER_NAMES.map(btnName => (
-        <FilterButton
-            key={btnName}
-            name={btnName}
-            isPressed={btnName === filter}
-            setFilter={setFilter}
-        />
-    ));
-
     return (
         <div className="grid-container">
-            <div className="leftNavBar">
+            <div className="leftFilter">
                 <h3>Filters: </h3>
-                {filterButtons}
+                { FILTER_NAMES.map(btnName => (
+                    <FilterButton key={btnName} name={btnName} isPressed={btnName === filter} setFilter={setFilter} />
+                ))}
             </div>
             <div className="itemGrid">
                 {itemsList.map(item => (
@@ -47,12 +41,9 @@ function Shop(props) {
 
 function FilterButton(props) {
     return (
-        <button
-            className="filterButton"
-            aria-pressed={props.isPressed}
-            onClick={() => props.setFilter(props.name)}
-            name={props.name}>
-            <span>{props.name}</span>
+        // callback function is passed as a prop
+        <button className="filterButton" aria-pressed={props.isPressed} onClick={() => props.setFilter(props.name)}> 
+            {props.name}
         </button>
     );
 }

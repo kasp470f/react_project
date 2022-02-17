@@ -1,6 +1,6 @@
 function RarityColor(props) {
     if (props.rarity === "common") {
-        return "#000000";
+        return "#ffffff";
     } else if (props.rarity === "uncommon") {
         return "#00ff44";
     } else if (props.rarity === "rare") {

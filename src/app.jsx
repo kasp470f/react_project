@@ -3,8 +3,10 @@ import Navbar from './Navbar';
 import Shop from './Shop';
 import Details from './Details';
 import RandomItemCollection from "./generator/itemGenerator";
+import './stylesheet.css';
 
-class App extends React.Component { 
+
+class App extends React.Component {
     constructor() {
         super();
         let itemsGen = RandomItemCollection(12);        
@@ -28,10 +30,10 @@ class App extends React.Component {
         return (
             <>
                 <Navbar onClose={this.onClose} />
-                {this.state.selection === "" ? 
-                <Shop items={this.state.items} onSelect={this.onSelect}/> 
-                :
-                <Details itemID={this.state.selection} items={this.state.items} onClose={this.onClose}/>
+                {this.state.selection === "" ?
+                    <Shop items={this.state.items} onSelect={this.onSelect} />
+                    :
+                    <Details itemID={this.state.selection} items={this.state.items} onClose={this.onClose} />
                 }
             </>
         );
