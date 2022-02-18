@@ -25,13 +25,18 @@ body {
     color: white;
 }
 
+.detailsGrid > div {
+    box-shadow: 3.5px 3.5px 3px black ;
+    border: 2px solid black;
+}
+
 .detailsColumn div.detailsImageContainer {
     width: fit-content;
     text-align: center;
 }
 
 .detailsColumn div div img {
-    filter: drop-shadow(2px 4px 6px black);
+    filter: drop-shadow(2px 4px 1px black);
     width: 80%;
     padding: 2vh;
 }
@@ -127,12 +132,13 @@ body {
     display: block;
     padding: 8px 20px;
     background-color: var(--tertiary-color);
-    margin: 0 10px;
+    margin: 2px 10px;
     width: fit-content;
     text-align: center;
     font-weight: bold;
     border: 2px solid black;
     user-select: none;
+    box-shadow: 2px 2px 1px black ;
 }
 
 .navbar .redirects li span:hover {
@@ -216,7 +222,7 @@ body {
 .itemGrid div img {
     width: 80%;
     height: 80%;
-    filter: drop-shadow(2px 4px 6px black);
+    filter: drop-shadow(2px 4px 1px black);
 
     /* Center the image */
     position: absolute;

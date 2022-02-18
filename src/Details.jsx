@@ -7,7 +7,6 @@ function Details(props) {
 
     return (
         <>
-            <button onClick={props.onClose} style={{position: "absolute"}}>x</button>
             <div className="detailsGrid">
                 <div className="detailsColumn" id="image">
                     <div className="detailsImageContainer">
