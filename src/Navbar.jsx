@@ -1,5 +1,6 @@
 import React from 'react';
 import './stylesheet.css';
+import { Link } from 'react-router-dom';
 
 function Navbar(props) {
     return (
@@ -16,7 +17,15 @@ function Navbar(props) {
                     <span>Search Bar</span>
                     <input/>
                 </div> */}
-                <div className="shopping_cart">Basket 🛒</div>
+                <div className="shopping_cart">
+                    <Link to='/Cart'>
+                    Basket 🛒
+                    </Link>
+                    <Link to='/'>
+                    Shop
+                    </Link>
+                    
+                    </div>
             </div>
         </>
     );
