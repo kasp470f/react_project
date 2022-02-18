@@ -1,5 +1,6 @@
 import React from 'react';
 import './stylesheet.css';
+import { Link } from 'react-router-dom';
 
 function Navbar(props) {
     return (
@@ -8,11 +9,15 @@ function Navbar(props) {
                 <div id="logo">Dungeon Loot Web-Shop</div>
                 <div className="redirects">
                     <ul>
-                        <li onClick={props.onClose}><span>Loot</span></li>
-                        <li onClick={props.onClose}><span>Auction</span></li>
+                        <Link to='/'><li><span>Loot</span></li></Link>
+                        <li><span>Auction</span></li>
                     </ul>
                 </div>
-                <div className="shopping_cart">Basket 🛒</div>
+                <Link to='/cart'>
+                    <div className="shopping_cart">
+                        <span>Basket 🛒</span>
+                    </div>
+                </Link>
             </div>
         </>
     );
