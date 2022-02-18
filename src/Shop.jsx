@@ -1,24 +1,15 @@
 import React, { useState } from "react";
 import './stylesheet.css';
 import ItemComponent from "./components/itemComponents";
+import { types } from "./generator/itemText";
 
-const FILTER_MAP = {
-    All: () => true,
-    Chestplates: item => item.type === "chestplate",
-    Boots: item => item.type === "boots",
-    Helmets: item => item.type === "helmet",
-    Leggings: item => item.type === "leggings",
-    Swords: item => item.type === "sword",
-    Gems: item => item.type === "gem",
-    Meat: item => item.type === "meat",
-    Rings: item => item.type === "ring"
-};
+const FILTER_MAP = MapFilters();
+
+console.log(FILTER_MAP)
 
 function Shop(props) {
-    const filtering=useFilter();
-    //const [filter, setFilter] = useState('All');  //it's a hook!!
-    const itemsList = props.items
-        .filter(FILTER_MAP[filtering.selection]);
+    const filtering = useFilter(); // It's a custom hook!!
+    const itemsList = props.items.filter(FILTER_MAP[filtering.selection]);
 
     return (
         <div className="grid-container">
@@ -37,7 +28,7 @@ function Shop(props) {
     );
 }
 
-//custom hook using built-in useState-hook
+// Custom hook using built-in useState-hook
 function useFilter() {
     const [filter, setFilter] = useState('All');
     
@@ -47,10 +38,23 @@ function useFilter() {
 function FilterButton(props) {
     return (
         // callback function is passed as a prop
-        <button className="filterButton" aria-pressed={props.isPressed} onClick={() => props.setFilter(props.name)}>
+        <div className="filterButton" aria-pressed={props.isPressed} onClick={() => props.setFilter(props.name)}>
             {props.name}
-        </button>
+        </div>
     );
+}
+
+function MapFilters() {
+
+    const filters = {
+        All: () => true,
+    };
+    
+    types.forEach(type => {
+        filters[type] = item => item.type === type;
+    });
+
+    return filters;
 }
 
 export default Shop;

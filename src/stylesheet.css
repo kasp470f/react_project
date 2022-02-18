@@ -1,7 +1,7 @@
 :root {
     --background-color: #382e24;
 
-    --primary-color: #4a3c30;
+    --primary-color: #665241;
     --secondary-color: #5e544c;
     --tertiary-color: #ad9a78;
 }
@@ -25,13 +25,18 @@ body {
     color: white;
 }
 
+.detailsGrid > div {
+    box-shadow: 3.5px 3.5px 3px black ;
+    border: 2px solid black;
+}
+
 .detailsColumn div.detailsImageContainer {
     width: fit-content;
     text-align: center;
 }
 
 .detailsColumn div div img {
-    filter: drop-shadow(2px 4px 6px black);
+    filter: drop-shadow(2px 4px 1px black);
     width: 80%;
     padding: 2vh;
 }
@@ -43,6 +48,14 @@ body {
     height: 96.5%;
 }
 
+.detailsInfo p {
+    font-weight: bold;
+}
+
+.detailsInfo p i {
+    font-weight: normal;
+}
+
 .itemPrice {
     text-align: center;
     font-size: 1.5rem;
@@ -50,7 +63,7 @@ body {
     background-color: var(--tertiary-color);
 }
 
-.detailsColumn .itemPrice i {
+.itemPrice i {
     font-weight: normal;
     text-decoration: underline;
 }
@@ -58,12 +71,20 @@ body {
 .itemDescription {
     text-align: center;
     padding: 2vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .itemDescription p:first-child {
     font-size: 1.2em;
     font-weight: bold;
     margin: 0;
+}
+
+.itemDescription p:nth-child(2) {
+    font-weight: normal;
+    width: 70%;
 }
 
 #info {
@@ -90,6 +111,10 @@ body {
     color: white;
 }
 
+.navbar a {
+    text-decoration: none;
+}
+
 #logo {
     font-size: 20px;
     font-weight: bold;
@@ -111,11 +136,19 @@ body {
     display: block;
     padding: 8px 20px;
     background-color: var(--tertiary-color);
-    margin: 0 10px;
-    border: black solid 1px;
+    margin: 2px 10px;
     width: fit-content;
     text-align: center;
     font-weight: bold;
+    border: 2px solid black;
+    user-select: none;
+    box-shadow: 2px 2px 1px black;
+    color: white;
+}
+
+.navbar .redirects li span:hover {
+    background-color: var(--secondary-color);
+    transition: 0.3s;
 }
 
 .navbar .search_bar span {
@@ -123,28 +156,61 @@ body {
 }
 
 .navbar .shopping_cart {
-    font-size: 25px;
+    padding: 8px 20px;
+    background-color: var(--tertiary-color);
+    margin: 2px 10px;
+    width: fit-content;
+    text-align: center;
+    font-weight: bold;
+    border: 2px solid black;
+    user-select: none;
+    box-shadow: 2px 2px 1px black;
+    color: white;
+    text-decoration: none;
 }
 
 /* Shop CSS */
 .grid-container {
     margin: 10px;
     display: grid;
-    grid-template-columns: 25% 75%;
+    grid-template-columns: 17% repeat(1, 1fr);
     gap: 10px
 }
 
 .leftFilter {
-    background-color: var(--tertiary-color);
+    background-color: var(--primary-color);
     padding: 0 2vh 3vh;
     border: black solid 2px;
     color: white;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .leftFilter h3 {
     text-align: center;
     font-weight: bold;
     font-size: 25px;
+}
+
+.filterButton {
+    display: block;
+    width: 7em;
+    font-size: 23px;    
+    text-align: center;
+    background-color: var(--tertiary-color);
+    margin-bottom: 1vh;;
+    padding: 0.25rem;
+    user-select: none;
+    cursor: pointer;
+    border: 2px solid black;
+    box-shadow: 2px 2px 1px black ;
+}
+
+.filterButton:hover {
+    background-color: var(--secondary-color);
+    transition: 0.3s;
 }
 
 .itemGrid {
@@ -159,12 +225,19 @@ body {
     height: 200px;
     text-align: center;
     border: black solid 2px;
+    user-select: none;
+    cursor: pointer;
+    box-shadow: 2px 2px 1px black ;
+}
+
+.itemGrid > div:hover {
+    filter: brightness(70%);
 }
 
 .itemGrid div img {
     width: 80%;
     height: 80%;
-    filter: drop-shadow(2px 4px 6px black);
+    filter: drop-shadow(2px 4px 1px black);
 
     /* Center the image */
     position: absolute;
@@ -182,6 +255,8 @@ body {
 }
 
 .itemTag {
+    font-size: 90%;
+
     /* Make it appear over the image */
     position: absolute;
     left: 0;
@@ -195,12 +270,4 @@ body {
     padding: 3.5% 0;
     font-weight: bold;
     text-transform: uppercase;
-}
-
-.filterButton {
-    display: block;
-    width: 8em;
-    font-size: 32px;    
-    text-align: left;
-    background-color: #dddddd;
 }
