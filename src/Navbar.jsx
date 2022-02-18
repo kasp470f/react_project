@@ -10,7 +10,6 @@ function Navbar(props) {
                 <div className="redirects">
                     <ul>
                         <Link to='/'><li><span>Loot</span></li></Link>
-                        <li><span>Auction</span></li>
                     </ul>
                 </div>
                 <Link to='/cart'>

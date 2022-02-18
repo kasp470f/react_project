@@ -4,7 +4,7 @@ import Navbar from './Navbar';
 import Shop from './Shop';
 import Cart from './Cart';
 import Details from './Details';
-import {RandomItemCollection} from "./generator/itemGenerator";
+import { RandomItemCollection, RandomItem } from "./generator/itemGenerator";
 import './stylesheet.css';
 
 
@@ -14,18 +14,36 @@ class App extends React.Component {
         let itemsGen = RandomItemCollection(40);
         this.state = {
             items: itemsGen,
-            selection: "",
+            selection: undefined,
         }
         this.onSelect = this.onSelect.bind(this);
         this.onClose = this.onClose.bind(this);
     }
 
-    onSelect(id) {
-        this.setState({ selection: id });
+    componentDidMount() {
+        setInterval(() => { // Interval
+            let id = Math.floor(Math.random() * this.state.items.length);
+            this.setState({
+                items: this.state.items.map(item => {
+                    if (item.id === id) {
+                        return RandomItem(id);
+                    }
+                    if (this.state.selection !== undefined && this.state.selection.id === id) {
+                        this.setState({ selection: undefined });
+                        alert("This item seems to already have been bought!");
+                    }
+                    return item;
+                }),
+            });
+        }, Math.floor(Math.random() * + 5000) + 1000);
+    }
+
+    onSelect(item) {
+        this.setState({ selection: item });
     }
 
     onClose() {
-        this.setState({ selection: "" });
+        this.setState({ selection: undefined });
     }
 
     render() {
@@ -33,11 +51,12 @@ class App extends React.Component {
             <>
                 <Router>
                     <div className='App'>
-                        <Navbar onClose={this.onClose} />
+                        <Navbar />
                         {/* I V6 blev Switch erstattet af Routes og component erstattet af element*/}
                         <Routes>
                             <Route path='/' exact element={<Shop items={this.state.items} onSelect={this.onSelect} />} />
                             <Route path='/cart' exact element={<Cart name='Cart' />} />
+                            <Route path='/details/:id' exact element={<Details item={this.state.selection} />} />
                         </Routes>
                     </div>
                 </Router>

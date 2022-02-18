@@ -5,8 +5,6 @@ import { types } from "./generator/itemText";
 
 const FILTER_MAP = MapFilters();
 
-console.log(FILTER_MAP)
-
 function Shop(props) {
     const filtering = useFilter(); // It's a custom hook!!
     const itemsList = props.items.filter(FILTER_MAP[filtering.selection]);

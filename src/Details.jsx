@@ -3,7 +3,10 @@ import './stylesheet.css';
 import RarityColor from "./components/itemRarity";
 
 function Details(props) {
-    let itemInfo = props.items[props.itemID];
+    let itemInfo = props.item;
+    if (itemInfo === undefined) {
+        return <div>No item selected</div>;
+    }
 
     return (
         <>
