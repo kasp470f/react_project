@@ -1,11 +1,14 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Navbar from './Navbar';
-import Shop from './Shop';
-import Cart from './Cart';
-import Details from './Details';
 import { RandomItemCollection, RandomItem } from "./generator/itemGenerator";
 import './stylesheet.css';
+
+// Pages
+import Navbar from './components/Navbar';
+import Shop from './pages/Shop';
+import Cart from './pages/Cart';
+import Details from './pages/Details';
+import Error404 from './pages/Error404';
 
 
 class App extends React.Component {
@@ -57,6 +60,8 @@ class App extends React.Component {
                             <Route path='/' exact element={<Shop items={this.state.items} onSelect={this.onSelect} />} />
                             <Route path='/cart' exact element={<Cart name='Cart' />} />
                             <Route path='/details/:id' exact element={<Details item={this.state.selection} />} />
+                            {/* If path is not correct */}
+                            <Route path='*' element={<Error404 />} />
                         </Routes>
                     </div>
                 </Router>

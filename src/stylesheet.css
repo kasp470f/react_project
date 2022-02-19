@@ -11,6 +11,7 @@ body {
     font-family: 'Roboto', sans-serif;
 
     background-color: var(--background-color);
+    overflow-y: scroll;
 }
 
 /* Details CSS */
@@ -270,4 +271,32 @@ body {
     padding: 3.5% 0;
     font-weight: bold;
     text-transform: uppercase;
+}
+
+/* Basket CSS */
+
+
+/* Error 404 CSS */
+.errorPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.errorPage div {
+    text-align: center;
+    width: 80%;
+    padding: 5vw 0;
+    background-color: var(--tertiary-color);
+    color: white;
+}
+
+.errorPage div h1 {
+    font-size: 5rem;
+    font-weight: bold;
+}
+
+.errorPage div p {
+    font-size: 2rem;
+    font-weight: bold;
 }

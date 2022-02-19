@@ -1,5 +1,5 @@
 import React from 'react';
-import './stylesheet.css';
+import '../stylesheet.css';
 function Cart(props) {
     return (
         <>
