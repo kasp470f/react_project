@@ -43,7 +43,6 @@ function FilterButton(props) {
 }
 
 function MapFilters() {
-
     const filters = {
         All: () => true,
     };

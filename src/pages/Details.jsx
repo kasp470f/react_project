@@ -1,9 +1,12 @@
 import React from "react";
 import '../stylesheet.css';
 import RarityColor from "../components/itemRarity";
+import { CartList, CartKey } from '../components/cartList';
+import { UpdateCartText } from "../pages/Cart";
 
 function Details(props) {
     let itemInfo = props.item;
+
     if (itemInfo === undefined) {
         return <div>No item selected</div>;
     }
@@ -14,13 +17,13 @@ function Details(props) {
                 <div className="detailsColumn" id="image">
                     <div className="detailsImageContainer">
                         <div style={{ background: "radial-gradient(circle, " + RarityColor(itemInfo) + " -300%, #5f5f5f)" }}>
-                            <img src={require("../assets/" + itemInfo.icon)} alt="the Game Object"/>
+                            <img src={require("../assets/" + itemInfo.icon)} alt="the Game Object" />
                         </div>
                     </div>
                 </div>
                 <div className="itemPrice" id="price">
-                        <p>Price: <i>{itemInfo.price}</i> $</p>
-                    </div>
+                    <p>Price: <i>{itemInfo.price}</i> $</p>
+                </div>
                 <div className="detailsColumn" id="info">
                     <div className="detailsInfo">
                         <h1>Item info:</h1>
@@ -33,13 +36,33 @@ function Details(props) {
                             <p>Description:</p>
                             <p>{itemInfo.description}</p>
                         </div>
-
-                        <button>Buy</button>
+                        <div>
+                            <input type="number" id="stacks" defaultValue={1}></input>
+                            <div className="filterButton" onClick={() => addItem(itemInfo)}>Add to cart</div>
+                        </div>
                     </div>
                 </div>
             </div>
         </>
     );
+}
+
+function addItem(item) {
+    let numberOfStacks = document.getElementById("stacks").value;
+    let boughtItem;
+    let cartKey = CartKey();
+    if (!numberOfStacks > 1) { numberOfStacks = 1; }
+    
+    boughtItem = Object.assign(
+        { key: cartKey },
+        { ...item },
+        { 
+            numberOfStacks: numberOfStacks, 
+            sumOfRow: (item.price * numberOfStacks) 
+        });
+
+    CartList.push(boughtItem);
+    UpdateCartText();
 }
 
 export default Details;
