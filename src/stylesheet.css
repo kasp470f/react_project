@@ -1,5 +1,5 @@
 :root {
-    --background-color: #382e24;
+    --background-color: #241d17;
 
     --primary-color: #665241;
     --secondary-color: #5e544c;
@@ -62,11 +62,6 @@ body {
     font-size: 1.5rem;
     font-weight: bold;
     background-color: var(--tertiary-color);
-}
-
-.itemPrice i {
-    font-weight: normal;
-    text-decoration: underline;
 }
 
 .itemDescription {
@@ -201,8 +196,8 @@ body {
 
 .filterButton {
     display: block;
-    width: 7em;
-    font-size: 23px;    
+    width: 100%;
+    font-size: 1.3vw;  
     text-align: center;
     background-color: var(--tertiary-color);
     margin-bottom: 1vh;;
@@ -282,9 +277,10 @@ body {
 .itemTag span:nth-child(2){
     font-size: 0.8rem;
     font-family: monospace;
+    color: black;
 }
 
-/* Basket CSS */
+/* Cart CSS */
 
 
 /* Error 404 CSS */
