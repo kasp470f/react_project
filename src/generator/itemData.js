@@ -4,6 +4,7 @@ export let types = [
     "Leggings",
     "Boots",
     "Sword",
+    "Bow",
     "Ring",
     "Amulet",
     "Potion",
@@ -70,6 +71,17 @@ export let itemNames = {
         "Dragon Sword",
         "Crystal Sword",
         "Obsidian Sword"
+    ],
+    "Bow": [
+        "Wooden Bow",
+        "Iron Bow",
+        "Steel Bow",
+        "Mithril Bow",
+        "Adamant Bow",
+        "Rune Bow",
+        "Dragon Bow",
+        "Crystal Bow",
+        "Obsidian Bow"
     ],
     "Gem": [
         "Ruby",

@@ -128,6 +128,10 @@ body {
     overflow: hidden;
 }
 
+.navbar .redirects {
+    display: flex;
+}
+
 .navbar .redirects li {
     float: left;
     cursor: pointer;
@@ -242,7 +246,7 @@ body {
 
     /* Center the image */
     position: absolute;
-    top: 45%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     
@@ -257,6 +261,8 @@ body {
 
 .itemTag {
     font-size: 90%;
+    display: flex;
+    flex-direction: column;
 
     /* Make it appear over the image */
     position: absolute;
@@ -271,6 +277,10 @@ body {
     padding: 3.5% 0;
     font-weight: bold;
     text-transform: uppercase;
+}
+
+.itemTag span:nth-child(2){
+    font-size: 0.8rem;
 }
 
 /* Basket CSS */

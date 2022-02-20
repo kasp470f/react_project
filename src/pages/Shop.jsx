@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import '../stylesheet.css';
 import ItemComponent from "../components/itemComponents";
-import { types } from "../generator/itemText";
+import { types } from "../generator/itemData";
 
 const FILTER_MAP = MapFilters();
 

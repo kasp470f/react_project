@@ -9,7 +9,10 @@ function Navbar(props) {
                 <div id="logo">Dungeon Loot Web-Shop</div>
                 <div className="redirects">
                     <ul>
-                        <Link to='/'><li><span>Loot</span></li></Link>
+                        <Link to='/'><li><span>Shop</span></li></Link>
+                    </ul>
+                    <ul>
+                        <Link to='/inventory'><li><span>Inventory</span></li></Link>
                     </ul>
                 </div>
                 <Link to='/cart'>

@@ -8,6 +8,7 @@ import Navbar from './components/Navbar';
 import Shop from './pages/Shop';
 import Cart from './pages/Cart';
 import Details from './pages/Details';
+import Inventory from './pages/Inventory';
 import Error404 from './pages/Error404';
 
 
@@ -18,6 +19,7 @@ class App extends React.Component {
         this.state = {
             items: itemsGen,
             selection: undefined,
+            basket: [],
         }
         this.onSelect = this.onSelect.bind(this);
         this.onClose = this.onClose.bind(this);
@@ -28,7 +30,7 @@ class App extends React.Component {
             let id = Math.floor(Math.random() * this.state.items.length);
             this.setState({
                 items: this.state.items.map(item => {
-                    if (item.id === id) {
+                    if (item.id === id && !this.state.basket.includes(item)) {
                         return RandomItem(id);
                     }
                     if (this.state.selection !== undefined && this.state.selection.id === id) {
@@ -58,9 +60,10 @@ class App extends React.Component {
                         {/* I V6 blev Switch erstattet af Routes og component erstattet af element*/}
                         <Routes>
                             <Route path='/' exact element={<Shop items={this.state.items} onSelect={this.onSelect} />} />
-                            <Route path='/cart' exact element={<Cart name='Cart' />} />
+                            <Route path='/inventory' exact element={<Inventory />} />
+                            <Route path='/cart' exact element={<Cart basket={this.state.basket} />} />
                             <Route path='/details/:id' exact element={<Details item={this.state.selection} />} />
-                            {/* If path is not correct */}
+                            {/* If path is not correct, send to error 404 page*/}
                             <Route path='*' element={<Error404 />} />
                         </Routes>
                     </div>
