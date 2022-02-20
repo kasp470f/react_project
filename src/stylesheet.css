@@ -281,6 +281,7 @@ body {
 
 .itemTag span:nth-child(2){
     font-size: 0.8rem;
+    font-family: monospace;
 }
 
 /* Basket CSS */

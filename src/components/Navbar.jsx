@@ -9,13 +9,13 @@ function Navbar(props) {
                 <div id="logo">Dungeon Loot Web-Shop</div>
                 <div className="redirects">
                     <ul>
-                        <Link to='/'><li><span>Shop</span></li></Link>
+                        <Link to='/' onClick={props.onClose}><li><span>Shop</span></li></Link>
                     </ul>
                     <ul>
-                        <Link to='/inventory'><li><span>Inventory</span></li></Link>
+                        <Link to='/inventory' onClick={props.onClose}><li><span>Inventory</span></li></Link>
                     </ul>
                 </div>
-                <Link to='/cart'>
+                <Link to='/cart' onClick={props.onClose}>
                     <div className="shopping_cart">
                         <span>Basket 🛒</span>
                     </div>
