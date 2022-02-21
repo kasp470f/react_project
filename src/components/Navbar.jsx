@@ -1,6 +1,7 @@
 import React from 'react';
 import '../stylesheet.css';
 import { Link } from 'react-router-dom';
+import {CartList} from './cartList';
 
 function Navbar(props) {
     return (
@@ -15,10 +16,8 @@ function Navbar(props) {
                         <Link to='/inventory' onClick={props.onClose}><li><span>Inventory</span></li></Link>
                     </ul>
                 </div>
-                <Link to='/cart' onClick={props.onClose}>
-                    <div className="shopping_cart">
-                        <span>Basket 🛒</span>
-                    </div>
+                <Link to='/cart'>
+                    <div className="shopping_cart"><span>Cart 🛒 ({CartList.length})</span></div>
                 </Link>
             </div>
         </>

@@ -2,15 +2,16 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { RandomItemCollection, RandomItem } from "./generator/itemGenerator";
 import './stylesheet.css';
+import { UpdateCartText } from './pages/Cart';
+import { CartList, removeTimeoutItem } from './components/cartList';
 
 // Pages
 import Navbar from './components/Navbar';
 import Shop from './pages/Shop';
-import Cart from './pages/Cart';
+import { Cart } from './pages/Cart';
 import Details from './pages/Details';
 import Inventory from './pages/Inventory';
 import Error404 from './pages/Error404';
-
 
 class App extends React.Component {
     constructor() {
@@ -34,7 +35,11 @@ class App extends React.Component {
                     }
                     if (this.state.selection !== undefined && this.state.selection.id === id) {
                         this.setState({ selection: undefined });
-                        alert("This item seems to already have been bought!");
+
+                        //find the removed element(s) in the Cart and remove them + UpdateCartText
+                        removeTimeoutItem(id);
+
+                        // alert("This item seems to already have been bought!");
                     }
                     return item;
                 }),
@@ -60,7 +65,7 @@ class App extends React.Component {
                         <Routes>
                             <Route path='/' exact element={<Shop items={this.state.items} onSelect={this.onSelect} />} />
                             <Route path='/inventory' exact element={<Inventory />} />
-                            <Route path='/cart' exact element={<Cart basket={this.state.basket} />} />
+                            <Route path='/cart' exact element={<Cart />} />
                             <Route path='/details/:id' exact element={<Details item={this.state.selection} />} />
                             
                             {/* If path is not correct, send to error 404 page*/}

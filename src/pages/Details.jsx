@@ -1,9 +1,12 @@
 import React from "react";
 import '../stylesheet.css';
 import RarityColor from "../components/itemRarity";
+import { CartList, CartKey } from '../components/cartList';
+import { UpdateCartText } from "../pages/Cart";
 
 function Details(props) {
     let itemInfo = props.item;
+
     if (itemInfo === undefined) {
         return <div>No item selected</div>;
     }
@@ -33,13 +36,32 @@ function Details(props) {
                             <p>Description:</p>
                             <p>{itemInfo.description}</p>
                         </div>
-
-                        <button>Buy</button>
+                        <div className="detailsBuy">
+                            <div className="detailsBuyButton" onClick={() => addItem(itemInfo)}>Add to cart</div>
+                        </div>
                     </div>
                 </div>
             </div>
         </>
     );
+}
+
+function addItem(item) {
+    let numberOfStacks = item.amount;
+    let boughtItem;
+    let cartKey = CartKey();
+    if (!numberOfStacks > 1) { numberOfStacks = 1; }
+    
+    boughtItem = Object.assign(
+        { key: cartKey },
+        { ...item },
+        { 
+            numberOfStacks: numberOfStacks, 
+            sumOfRow: (item.price * numberOfStacks) 
+        });
+
+    CartList.push(boughtItem);
+    UpdateCartText();
 }
 
 export default Details;
