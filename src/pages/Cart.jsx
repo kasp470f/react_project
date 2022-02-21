@@ -61,7 +61,7 @@ export function ItemRow(props) {
         </tr>);
 }
 
-export function UpdateCartText() {
+export function updateCartText() {
     let cartItem = document.getElementsByClassName('shopping_cart')[0];
     cartItem.textContent = `Cart 🛒 (${CartList.length})`;
 };
