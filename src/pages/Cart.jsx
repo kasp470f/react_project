@@ -60,5 +60,5 @@ export function ItemRow(props) {
 
 export function UpdateCartText() {
     let cartItem = document.getElementsByClassName('shopping_cart')[0];
-    cartItem.innerHTML = `<span>Cart 🛒 (${CartList.length})</span>`;
+    cartItem.textContent = `Cart 🛒 (${CartList.length})`;
 };

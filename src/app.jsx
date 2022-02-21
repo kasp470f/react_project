@@ -36,7 +36,7 @@ class App extends React.Component {
                     if (this.state.selection !== undefined && this.state.selection.id === id) {
                         this.setState({ selection: undefined });
 
-                        //find the removed element(s) in the Cart and remove them + UpdateCartText
+                        // Find the removed element(s) in the Cart and remove them + UpdateCartText
                         removeTimeoutItem(id);
 
                         // alert("This item seems to already have been bought!");
