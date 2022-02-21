@@ -2,7 +2,7 @@ import React from "react";
 import '../stylesheet.css';
 import RarityColor from "../components/itemRarity";
 import { CartList, CartKey } from '../components/cartList';
-import { UpdateCartText } from "../pages/Cart";
+import { updateCartText } from "../pages/Cart";
 
 function Details(props) {
     let itemInfo = props.item;
@@ -46,22 +46,13 @@ function Details(props) {
     );
 }
 
-function addItem(item) {
-    let numberOfStacks = item.amount;
-    let boughtItem;
-    let cartKey = CartKey();
-    if (!numberOfStacks > 1) { numberOfStacks = 1; }
-    
-    boughtItem = Object.assign(
-        { key: cartKey },
-        { ...item },
-        { 
-            numberOfStacks: numberOfStacks, 
-            sumOfRow: (item.price * numberOfStacks) 
-        });
+function addItem(item) {   
+    let boughtItem = Object.assign(
+        { key: CartKey() },
+        { ...item });
 
     CartList.push(boughtItem);
-    UpdateCartText();
+    updateCartText();
 }
 
 export default Details;
