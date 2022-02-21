@@ -30,7 +30,7 @@ class App extends React.Component {
             this.setState({
                 items: this.state.items.map(item => {
                     if (item.id === id) {
-                        // Find the removed element(s) in the Cart and remove them + UpdateCartText
+                        // Find the removed element(s) in the Cart and remove them + updateCartText
                         removeTimeoutItem(id);
                         return RandomItem(id);
                     }
@@ -74,6 +74,5 @@ class App extends React.Component {
         );
     }
 }
-
 
 export default App;
