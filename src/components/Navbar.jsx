@@ -15,6 +15,9 @@ function Navbar(props) {
                     <ul>
                         <Link to='/inventory' onClick={props.onClose}><li><span>Inventory</span></li></Link>
                     </ul>
+                    <ul>
+                        <li onClick={() => console.log(CartList)}><span>test</span></li>
+                    </ul>
                 </div>
                 <Link to='/cart'>
                     <div className="shopping_cart"><span>Cart 🛒 ({CartList.length})</span></div>

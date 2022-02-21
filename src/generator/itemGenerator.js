@@ -11,9 +11,9 @@ export function RandomItem(uniqueID) {
 
     return {
         id: uniqueID,
+        name: name,
         type: type,
         rarity: rarity,
-        name: name,
         price: price,
         stats: [],
         amount: amount,

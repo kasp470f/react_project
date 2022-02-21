@@ -6,7 +6,7 @@ export function Cart() {
     if (CartList !== undefined || CartList !== null) {
         let totalSum = 0;
         CartList.forEach(item => {
-            totalSum += item.sumOfRow;
+            totalSum += item.price;
         });
         return (
             <div className='detailsInfo'>
@@ -16,16 +16,14 @@ export function Cart() {
                             <th>Name</th>
                             <th>Type</th>
                             <th>Rarity</th>
+                            <th>Amount</th>
                             <th>Price</th>
-                            <th>Stacks</th>
-                            <th>Sum</th>
                         </tr>
                     </thead>
                     <tbody>
                         {CartList.map(
                             item => {
-                                //using Spread syntax to pass the whole item as an attribute
-                                return <ItemRow {...item} />
+                                return <ItemRow {...item} /> //using Spread syntax to pass the whole item as an attribute
                             })}
                     </tbody>
                     <tfoot>
@@ -34,8 +32,7 @@ export function Cart() {
                             <td></td>
                             <td></td>
                             <td></td>
-                            <td></td>
-                            <td>Total: {totalSum} $</td>
+                            <td>Total: {totalSum} gold</td>
                         </tr>
                     </tfoot>
                 </table>
@@ -52,9 +49,8 @@ export function ItemRow(props) {
             <td>{props.name}</td>
             <td>{props.type}</td>
             <td>{props.rarity}</td>
+            <td>{props.amount}</td>
             <td>{props.price}</td>
-            <td>{props.numberOfStacks}</td>
-            <td>{props.sumOfRow}</td>
         </tr>);
 }
 

@@ -57,26 +57,18 @@ body {
     font-weight: normal;
 }
 
-.detailsInfo table {
-    width: 90%;
-    color: white;
-}
-
-.detailsInfo table th {
-    font-weight: bold;
-    font-size: large;
-    border-bottom: 1px solid var(--primary-color);
-}
-
-.detailsInfo table td {
-    font-weight: normal;
-    font-size: medium;
-}
-
-.detailsInfo table tfoot td{
-    font-weight: bold;
-    font-size: large;
-    border-top: 1px solid var(--primary-color);
+.detailsBuyButton {
+    display: block;
+    width: 100%;
+    font-size: 1.3vw;  
+    padding: 0.5rem 0;
+    text-align: center;
+    background-color: var(--tertiary-color);
+    margin-bottom: 1vh;;
+    user-select: none;
+    cursor: pointer;
+    border: 2px solid black;
+    box-shadow: 2px 2px 1px black ;
 }
 
 .itemPrice {
@@ -218,7 +210,7 @@ body {
     font-size: 25px;
 }
 
-.filterButton, .detailsBuyButton {
+.filterButton {
     display: block;
     width: 100%;
     font-size: 1.3vw;  
@@ -232,7 +224,7 @@ body {
     box-shadow: 2px 2px 1px black ;
 }
 
-.filterButton:hover {
+.filterButton:hover, .detailsBuyButton:hover {
     background-color: var(--secondary-color);
     transition: 0.3s;
 }
@@ -305,6 +297,28 @@ body {
 }
 
 /* Cart CSS */
+.detailsInfo table {
+    width: 90%;
+    color: white;
+}
+
+.detailsInfo table th {
+    font-weight: bold;
+    font-size: large;
+    border-bottom: 1px solid var(--primary-color);
+}
+
+.detailsInfo table td {
+    font-weight: normal;
+    font-size: medium;
+}
+
+.detailsInfo table tfoot td{
+    font-weight: bold;
+    font-size: large;
+    border-top: 1px solid var(--primary-color);
+}
+
 
 /* Error 404 CSS */
 .errorPage {
