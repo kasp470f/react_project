@@ -20,6 +20,7 @@ class App extends React.Component {
         this.state = {
             items: itemsGen,
             selection: undefined,
+            cart: [],
         }
         this.onSelect = this.onSelect.bind(this);
         this.onClose = this.onClose.bind(this);
@@ -44,7 +45,7 @@ class App extends React.Component {
                     return item;
                 }),
             });
-        }, Math.floor(Math.random() * + 5000) + 1000);
+        }, Math.floor(Math.random() * + 1500) + 0);
     }
 
     onSelect(item) {
@@ -65,7 +66,7 @@ class App extends React.Component {
                         <Routes>
                             <Route path='/' exact element={<Shop items={this.state.items} onSelect={this.onSelect} />} />
                             <Route path='/inventory' exact element={<Inventory />} />
-                            <Route path='/cart' exact element={<Cart />} />
+                            <Route path='/cart' exact element={<Cart cart={this.state.cart}/>} />
                             <Route path='/details/:id' exact element={<Details item={this.state.selection} />} />
                             
                             {/* If path is not correct, send to error 404 page*/}
