@@ -47,18 +47,10 @@ function Details(props) {
 }
 
 function addItem(item) {
-    let numberOfStacks = item.amount;
-    let boughtItem;
-    let cartKey = CartKey();
-    if (!numberOfStacks > 1) { numberOfStacks = 1; }
-    
-    boughtItem = Object.assign(
-        { key: cartKey },
-        { ...item },
-        { 
-            numberOfStacks: numberOfStacks, 
-            sumOfRow: (item.price * numberOfStacks) 
-        });
+    let boughtItem = Object.assisgn(
+        { key: CartKey()},
+        { ...item }
+        );
 
     CartList.push(boughtItem);
     UpdateCartText();
