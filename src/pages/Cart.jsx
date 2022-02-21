@@ -9,7 +9,7 @@ export function Cart() {
             totalSum += item.price;
         });
         return (
-            <div className='detailsInfo'>
+            <div className='cartPage'>
                 <table>
                     <thead>
                         <tr>
@@ -33,6 +33,13 @@ export function Cart() {
                             <td></td>
                             <td></td>
                             <td>Total: {totalSum} gold</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><div>Checkout</div></td>
                         </tr>
                     </tfoot>
                 </table>
