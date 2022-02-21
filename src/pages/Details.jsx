@@ -28,7 +28,7 @@ function Details(props) {
                         <p>Rarity: <i>{itemInfo.rarity}</i></p>
                         <p>Type: <i>{itemInfo.type}</i></p>
                         <p>Amount: <i>{itemInfo.amount}</i></p>
-                        <p>{itemInfo.stats}</p>
+                        <br/>
                         <div className="itemDescription">
                             <p>Description:</p>
                             <p>{itemInfo.description}</p>
