@@ -301,20 +301,20 @@ body {
 }
 
 /* Cart CSS */
-.cartPage {
+.cartPage, .inventoryPage {
     text-align: center;
     padding: 10px;
     background-color: var(--primary-color);
 }
 
-.cartPage table {
+.cartPage table, .inventoryPage table {
     margin: auto;
     box-sizing: border-box;
     width: 90%;
     color: white;
 }
 
-.cartPage table th {
+.cartPage table th, .inventoryPage table th {
     font-weight: bold;
     font-size: large;
     border-bottom: 1px solid;
@@ -322,21 +322,25 @@ body {
     padding: 1px;
 }
 
-.cartPage table td {
+.inventoryPage table th:nth-child(1) {
+    width: 10%;
+}
+
+.cartPage table td, .inventoryPage table td {
     font-weight: normal;
     font-size: medium;
 }
 
-.cartPage table tfoot td{
+.cartPage table tfoot td, .inventoryPage table tfoot td {
     font-weight: bold;
     font-size: large;
     border-top: 1px solid;
     text-align: center;
 }
-.cartPage table tbody tr td img {
+.cartPage table tbody tr td img, .inventoryPage table tbody tr td img {
     width: 3rem;
 }
-.cartPage tfoot div {
+.cartPage tfoot div, .inventoryPage tfoot div {
     text-decoration: none;
     display: inline-block;
     padding: 8px 20px;
@@ -352,12 +356,12 @@ body {
     cursor: pointer;
 }
 
-.cartPage tfoot div:hover {
+.cartPage tfoot div:hover, .inventoryPage tfoot div:hover {
     background-color: var(--secondary-color);
     transition: 0.3s;
 }
 
-.cartPage tbody ul {
+.cartPage tbody ul, .inventoryPage tbody ul {
     list-style: none;
 }
 

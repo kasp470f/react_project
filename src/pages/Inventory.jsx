@@ -4,7 +4,7 @@ export let InventoryList = []
 
 export function Inventory(props) {
     return (
-        <div className='cartPage'>
+        <div className='inventoryPage'>
             <table>
                 <thead>
                     <HeaderRow />
@@ -23,6 +23,7 @@ function HeaderRow() {
             <th>Name</th>
             <th>Type</th>
             <th>Rarity</th>
+            <th>Description</th>
             <th>Amount</th>
         </tr>
     );
@@ -36,6 +37,7 @@ function InventoryRow(props) {
             <td>{itemInfo.name}</td>
             <td>{itemInfo.type}</td>
             <td>{itemInfo.rarity}</td>
+            <td>{itemInfo.description}</td>
             <td>{itemInfo.amount}</td>
         </tr>
     );
