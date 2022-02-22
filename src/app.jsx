@@ -35,9 +35,7 @@ class App extends React.Component {
                         return RandomItem(id);
                     }
                     if (this.state.selection !== undefined && this.state.selection.id === id) {
-                        this.setState({ selection: undefined });
-                        // alert("This item seems to already have been bought!");
-                    }
+                        this.setState({ selection: undefined });                    }
                     return item;
                 }),
             });

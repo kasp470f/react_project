@@ -1,5 +1,5 @@
 :root {
-    --background-color: #241d17;
+    --background-color: #1b1612;
 
     --primary-color: #665241;
     --secondary-color: #5e544c;
@@ -13,103 +13,6 @@ body {
     background-color: var(--background-color);
     overflow-y: scroll;
 }
-
-/* Details CSS */
-.detailsGrid {
-    display: grid;
-    grid-template-columns: auto auto;
-    grid-template-rows: 1fr min-content;
-    grid-template-areas: "itemImage itemInfo" "itemPrice itemInfo";
-    gap: 1rem;
-    padding: 0 2rem;
-
-    color: white;
-}
-
-.detailsGrid > div {
-    box-shadow: 3.5px 3.5px 3px black ;
-    border: 2px solid black;
-}
-
-.detailsColumn div.detailsImageContainer {
-    width: fit-content;
-    text-align: center;
-}
-
-.detailsColumn div div img {
-    filter: drop-shadow(2px 4px 1px black);
-    width: 80%;
-    padding: 2vh;
-}
-
-.detailsInfo {
-    text-align: center;
-    background-color: var(--tertiary-color);
-    padding: 10px;
-    height: 96.5%;
-}
-
-.detailsInfo p {
-    font-weight: bold;
-}
-
-.detailsInfo p i {
-    font-weight: normal;
-}
-
-.detailsBuyButton {
-    display: block;
-    width: 100%;
-    font-size: 1.3vw;  
-    padding: 0.5rem 0;
-    text-align: center;
-    background-color: var(--tertiary-color);
-    margin-bottom: 1vh;;
-    user-select: none;
-    cursor: pointer;
-    border: 2px solid black;
-    box-shadow: 2px 2px 1px black ;
-}
-
-.itemPrice {
-    text-align: center;
-    font-size: 1.5rem;
-    font-weight: bold;
-    background-color: var(--tertiary-color);
-}
-
-.itemDescription {
-    text-align: center;
-    padding: 2vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.itemDescription p:first-child {
-    font-size: 1.2em;
-    font-weight: bold;
-    margin: 0;
-}
-
-.itemDescription p:nth-child(2) {
-    font-weight: normal;
-    width: 70%;
-}
-
-#info {
-    grid-area: itemInfo;
-}
-
-#image {
-    grid-area: itemImage;
-}
-
-#price {
-    grid-area: itemPrice;
-}
-
-
 
 /* Navbar CSS */
 .navbar {
@@ -294,6 +197,106 @@ body {
     font-size: 0.8rem;
     font-family: monospace;
     color: black;
+}
+
+/* Details CSS */
+.detailsGrid {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: 1fr min-content;
+    grid-template-areas: "itemImage itemInfo" "itemPrice itemInfo";
+    gap: 1rem;
+    padding: 0 2rem;
+
+    color: white;
+}
+
+.detailsGrid > div {
+    box-shadow: 3.5px 3.5px 3px black ;
+    border: 2px solid black;
+}
+
+.detailsColumn div.detailsImageContainer {
+    width: fit-content;
+    text-align: center;
+}
+
+.detailsColumn div div img {
+    filter: drop-shadow(2px 4px 1px black);
+    width: 80%;
+    padding: 2vh;
+}
+
+.detailsInfo {
+    text-align: center;
+    background-color: var(--primary-color);
+    padding: 10px;
+    height: 96.5%;
+}
+
+.detailsInfo p {
+    font-weight: bold;
+}
+
+.detailsInfo p i {
+    font-weight: normal;
+}
+
+.detailsBuy {
+    display: flex;
+    justify-content: center;
+}
+
+.detailsBuyButton {
+    display: block;
+    width: 60%;
+    font-size: 1.3vw;  
+    padding: 0.5rem 0;
+    text-align: center;
+    background-color: var(--tertiary-color);
+    margin-bottom: 1vh;;
+    user-select: none;
+    cursor: pointer;
+    border: 2px solid black;
+    box-shadow: 2px 2px 1px black ;
+}
+
+.itemPrice {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    background-color: var(--primary-color);
+}
+
+.itemDescription {
+    text-align: center;
+    padding: 2vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.itemDescription p:first-child {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 0;
+}
+
+.itemDescription p:nth-child(2) {
+    font-weight: normal;
+    width: 70%;
+}
+
+#info {
+    grid-area: itemInfo;
+}
+
+#image {
+    grid-area: itemImage;
+}
+
+#price {
+    grid-area: itemPrice;
 }
 
 /* Cart CSS */
