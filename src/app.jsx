@@ -9,7 +9,7 @@ import Navbar from './components/Navbar';
 import Shop from './pages/Shop';
 import { Cart } from './pages/Cart';
 import Details from './pages/Details';
-import Inventory from './pages/Inventory';
+import {Inventory} from './pages/Inventory';
 import Error404 from './pages/Error404';
 
 class App extends React.Component {
@@ -41,7 +41,9 @@ class App extends React.Component {
                     return item;
                 }),
             });
-        }, Math.floor(Math.random() * + 2000) + 0);
+        }, 
+        600000);
+        // Math.floor(Math.random() * + 2000) + 0);
     }
 
     onSelect(item) {

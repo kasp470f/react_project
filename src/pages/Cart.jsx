@@ -1,30 +1,23 @@
 import React from 'react';
 import '../stylesheet.css';
-import { CartList } from '../components/cartList';
+import { CartList, CartKey } from '../components/cartList';
+import { InventoryList } from './Inventory';
 
 export function Cart() {
     if (CartList !== undefined || CartList !== null) {
         let totalSum = 0;
-        CartList.forEach(item => {
-            totalSum += item.price;
-        });
+        CartList.forEach(item => totalSum += item.price);
+
         return (
             <div className='cartPage'>
                 <table>
                     <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Type</th>
-                            <th>Rarity</th>
-                            <th>Amount</th>
-                            <th>Price</th>
-                        </tr>
+                        <HeaderRow />
                     </thead>
                     <tbody>
                         {CartList.map(
-                            item => {
-                                return <ItemRow {...item} /> //using Spread syntax to pass the whole item as an attribute
-                            })}
+                            item => <ItemRow {...item} /> //using Spread syntax to pass the whole item as an attribute
+                        )}
                     </tbody>
                     <tfoot>
                         <tr>
@@ -39,18 +32,30 @@ export function Cart() {
                             <td></td>
                             <td></td>
                             <td></td>
-                            <td><div>Checkout</div></td>
+                            <td><div onClick={() => checkOut()}>Checkout</div></td>
                         </tr>
                     </tfoot>
                 </table>
             </div>
         );
     } else {
-        return (<div>CART PAGE</div>);
+        return <div>CART PAGE</div>;
     }
 }
 
-export function ItemRow(props) {
+function HeaderRow() {
+    return (
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Rarity</th>
+            <th>Amount</th>
+            <th>Price</th>
+        </tr>
+    );
+}
+
+function ItemRow(props) {
     return (
         <tr>
             <td>{props.name}</td>
@@ -58,7 +63,24 @@ export function ItemRow(props) {
             <td>{props.rarity}</td>
             <td>{props.amount}</td>
             <td>{props.price}</td>
-        </tr>);
+        </tr>
+    );
+}
+
+function checkOut() {
+    if (CartList !== null || CartList !== undefined) {
+        for (let i = (CartList.length - 1); i >= 0; i--) {
+            let shiftedItem = CartList.splice((CartList.length - 1), 1);
+            // console.log(shiftedItem);
+            let boughtItem = Object.assign(
+                { key: CartKey() },
+                { ...shiftedItem }
+            );
+            console.log(boughtItem)
+            InventoryList.push(boughtItem);
+        }
+        updateCartText();
+    }
 }
 
 export function updateCartText() {

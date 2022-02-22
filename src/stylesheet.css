@@ -296,7 +296,7 @@ body {
     color: black;
 }
 
-/* Cart CSS */
+/* Cart and inventory CSS */
 .cartPage {
     text-align: center;
     padding: 10px;
@@ -329,6 +329,9 @@ body {
     border-top: 1px solid;
     text-align: center;
 }
+.cartPage table tbody tr td img {
+    width: 3rem;
+}
 .cartPage tfoot div {
     text-decoration: none;
     display: inline-block;
@@ -348,6 +351,10 @@ body {
 .cartPage tfoot div:hover {
     background-color: var(--secondary-color);
     transition: 0.3s;
+}
+
+.cartPage tbody ul {
+    list-style: none;
 }
 
 
