@@ -9,7 +9,7 @@
 body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
-
+    color: white;
     background-color: var(--background-color);
     overflow-y: scroll;
 }
@@ -232,6 +232,7 @@ body {
     background-color: var(--primary-color);
     padding: 10px;
     height: 96.5%;
+    width: 65vw;
 }
 
 .detailsInfo p {

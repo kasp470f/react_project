@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, useNavigate } from 'react-router-dom';
 import { RandomItemCollection, RandomItem } from "./generator/itemGenerator";
 import './stylesheet.css';
 import { removeTimeoutItem } from './components/cartList';
@@ -36,11 +36,12 @@ class App extends React.Component {
                         return RandomItem(id);
                     }
                     if (this.state.selection !== undefined && this.state.selection.id === id) {
-                        this.setState({ selection: undefined });                    }
+                        this.setState({ selection: undefined });              
+                    }
                     return item;
                 }),
             });
-        }, Math.floor(Math.random() * + 2000) + 1000);
+        }, Math.floor(Math.random() * + 5000) + 1000);
     }
 
     onSelect(item) {

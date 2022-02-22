@@ -1,12 +1,11 @@
-import { types, rarities, itemNames } from "./itemData";
+import { types, rarities, itemNames, itemDescriptions } from "./itemData";
 
 export function RandomItem(uniqueID) {
     let type = types[Math.floor(Math.random() * types.length)];
     let rarity = rarities[Math.floor(Math.random() * rarities.length)];
     let name = itemNames[type][Math.floor(Math.random() * itemNames[type].length)];
     let amount = (type === "Gem" || type === "Meat" || type === "Potion" || type === "Drop") ? Math.floor(Math.random() * 10) + 1 : 1;
-
-    // Change price based on rarity
+    let description = itemDescriptions[name];
     let price = PriceGen(rarity);
 
     return {
@@ -15,9 +14,8 @@ export function RandomItem(uniqueID) {
         type: type,
         rarity: rarity,
         price: price,
-        stats: [],
         amount: amount,
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer et ante ac ante luctus congue. Sed tempor, dolor vulputate consectetur dapibus, nibh magna dapibus nisl, vel ornare odio nibh et nisl.",
+        description: description,
         icon: type.toLowerCase() + ".png",
     };
 }
