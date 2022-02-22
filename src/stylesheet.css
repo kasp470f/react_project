@@ -1,7 +1,7 @@
 :root {
-    --background-color: #382e24;
+    --background-color: #1b1612;
 
-    --primary-color: #4a3c30;
+    --primary-color: #665241;
     --secondary-color: #5e544c;
     --tertiary-color: #ad9a78;
 }
@@ -9,73 +9,9 @@
 body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
-
-    background-color: var(--background-color);
-}
-
-/* Details CSS */
-.detailsGrid {
-    display: grid;
-    grid-template-columns: auto auto;
-    grid-template-rows: 1fr min-content;
-    grid-template-areas: "itemImage itemInfo" "itemPrice itemInfo";
-    gap: 1rem;
-    padding: 0 2rem;
-
     color: white;
-}
-
-.detailsColumn div.detailsImageContainer {
-    width: fit-content;
-    text-align: center;
-}
-
-.detailsColumn div div img {
-    filter: drop-shadow(2px 4px 6px black);
-    width: 80%;
-    padding: 2vh;
-}
-
-.detailsInfo {
-    text-align: center;
-    background-color: var(--tertiary-color);
-    padding: 10px;
-    height: 96.5%;
-}
-
-.itemPrice {
-    text-align: center;
-    font-size: 1.5rem;
-    font-weight: bold;
-    background-color: var(--tertiary-color);
-}
-
-.detailsColumn .itemPrice i {
-    font-weight: normal;
-    text-decoration: underline;
-}
-
-.itemDescription {
-    text-align: center;
-    padding: 2vh;
-}
-
-.itemDescription p:first-child {
-    font-size: 1.2em;
-    font-weight: bold;
-    margin: 0;
-}
-
-#info {
-    grid-area: itemInfo;
-}
-
-#image {
-    grid-area: itemImage;
-}
-
-#price {
-    grid-area: itemPrice;
+    background-color: var(--background-color);
+    overflow-y: scroll;
 }
 
 /* Navbar CSS */
@@ -90,6 +26,10 @@ body {
     color: white;
 }
 
+.navbar a {
+    text-decoration: none;
+}
+
 #logo {
     font-size: 20px;
     font-weight: bold;
@@ -102,6 +42,10 @@ body {
     overflow: hidden;
 }
 
+.navbar .redirects {
+    display: flex;
+}
+
 .navbar .redirects li {
     float: left;
     cursor: pointer;
@@ -111,11 +55,19 @@ body {
     display: block;
     padding: 8px 20px;
     background-color: var(--tertiary-color);
-    margin: 0 10px;
-    border: black solid 1px;
+    margin: 2px 10px;
     width: fit-content;
     text-align: center;
     font-weight: bold;
+    border: 2px solid black;
+    user-select: none;
+    box-shadow: 2px 2px 1px black;
+    color: white;
+}
+
+.navbar .redirects li span:hover {
+    background-color: var(--secondary-color);
+    transition: 0.3s;
 }
 
 .navbar .search_bar span {
@@ -123,28 +75,61 @@ body {
 }
 
 .navbar .shopping_cart {
-    font-size: 25px;
+    padding: 8px 20px;
+    background-color: var(--tertiary-color);
+    margin: 2px 10px;
+    width: fit-content;
+    text-align: center;
+    font-weight: bold;
+    border: 2px solid black;
+    user-select: none;
+    box-shadow: 2px 2px 1px black;
+    color: white;
+    text-decoration: none;
 }
 
 /* Shop CSS */
 .grid-container {
     margin: 10px;
     display: grid;
-    grid-template-columns: 25% 75%;
+    grid-template-columns: 17% repeat(1, 1fr);
     gap: 10px
 }
 
 .leftFilter {
-    background-color: var(--tertiary-color);
+    background-color: var(--primary-color);
     padding: 0 2vh 3vh;
     border: black solid 2px;
     color: white;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .leftFilter h3 {
     text-align: center;
     font-weight: bold;
     font-size: 25px;
+}
+
+.filterButton {
+    display: block;
+    width: 100%;
+    font-size: 1.3vw;  
+    text-align: center;
+    background-color: var(--tertiary-color);
+    margin-bottom: 1vh;;
+    padding: 0.25rem;
+    user-select: none;
+    cursor: pointer;
+    border: 2px solid black;
+    box-shadow: 2px 2px 1px black ;
+}
+
+.filterButton:hover, .detailsBuyButton:hover {
+    background-color: var(--secondary-color);
+    transition: 0.3s;
 }
 
 .itemGrid {
@@ -159,16 +144,23 @@ body {
     height: 200px;
     text-align: center;
     border: black solid 2px;
+    user-select: none;
+    cursor: pointer;
+    box-shadow: 2px 2px 1px black ;
+}
+
+.itemGrid > div:hover {
+    filter: brightness(70%);
 }
 
 .itemGrid div img {
     width: 80%;
     height: 80%;
-    filter: drop-shadow(2px 4px 6px black);
+    filter: drop-shadow(2px 4px 1px black);
 
     /* Center the image */
     position: absolute;
-    top: 45%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     
@@ -182,6 +174,10 @@ body {
 }
 
 .itemTag {
+    font-size: 90%;
+    display: flex;
+    flex-direction: column;
+
     /* Make it appear over the image */
     position: absolute;
     left: 0;
@@ -197,10 +193,200 @@ body {
     text-transform: uppercase;
 }
 
-.filterButton {
+.itemTag span:nth-child(2){
+    font-size: 0.8rem;
+    font-family: monospace;
+    color: black;
+}
+
+/* Details CSS */
+.detailsGrid {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: 1fr min-content;
+    grid-template-areas: "itemImage itemInfo" "itemPrice itemInfo";
+    gap: 1rem;
+    padding: 0 2rem;
+
+    color: white;
+}
+
+.detailsGrid > div {
+    box-shadow: 3.5px 3.5px 3px black ;
+    border: 2px solid black;
+}
+
+.detailsColumn div.detailsImageContainer {
+    width: fit-content;
+    text-align: center;
+}
+
+.detailsColumn div div img {
+    filter: drop-shadow(2px 4px 1px black);
+    width: 80%;
+    padding: 2vh;
+}
+
+.detailsInfo {
+    text-align: center;
+    background-color: var(--primary-color);
+    padding: 10px;
+    height: 96.5%;
+    width: 65vw;
+}
+
+.detailsInfo p {
+    font-weight: bold;
+}
+
+.detailsInfo p i {
+    font-weight: normal;
+}
+
+.detailsBuy {
+    display: flex;
+    justify-content: center;
+}
+
+.detailsBuyButton {
     display: block;
-    width: 8em;
-    font-size: 32px;    
-    text-align: left;
-    background-color: #dddddd;
+    width: 60%;
+    font-size: 1.3vw;  
+    padding: 0.5rem 0;
+    text-align: center;
+    background-color: var(--tertiary-color);
+    margin-bottom: 1vh;;
+    user-select: none;
+    cursor: pointer;
+    border: 2px solid black;
+    box-shadow: 2px 2px 1px black ;
+}
+
+.itemPrice {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    background-color: var(--primary-color);
+}
+
+.itemDescription {
+    text-align: center;
+    padding: 2vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.itemDescription p:first-child {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 0;
+}
+
+.itemDescription p:nth-child(2) {
+    font-weight: normal;
+    width: 70%;
+}
+
+#info {
+    grid-area: itemInfo;
+}
+
+#image {
+    grid-area: itemImage;
+}
+
+#price {
+    grid-area: itemPrice;
+}
+
+/* Cart CSS */
+.cartPage, .inventoryPage {
+    text-align: center;
+    padding: 10px;
+    background-color: var(--primary-color);
+}
+
+.cartPage table, .inventoryPage table {
+    margin: auto;
+    box-sizing: border-box;
+    width: 90%;
+    color: white;
+}
+
+.cartPage table th, .inventoryPage table th {
+    font-weight: bold;
+    font-size: large;
+    border-bottom: 1px solid;
+    width: 18%;
+    padding: 1px;
+}
+
+.inventoryPage table th:nth-child(1) {
+    width: 10%;
+}
+
+.cartPage table td, .inventoryPage table td {
+    font-weight: normal;
+    font-size: medium;
+}
+
+.cartPage table tfoot td, .inventoryPage table tfoot td {
+    font-weight: bold;
+    font-size: large;
+    border-top: 1px solid;
+    text-align: center;
+}
+.cartPage table tbody tr td img, .inventoryPage table tbody tr td img {
+    width: 3rem;
+}
+.cartPage tfoot div, .inventoryPage tfoot div {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 20px;
+    background-color: var(--tertiary-color);
+    margin: 2px 10px;
+    width: fit-content;
+    text-align: center;
+    font-weight: bold;
+    border: 2px solid black;
+    user-select: none;
+    box-shadow: 2px 2px 1px black;
+    color: white;
+    cursor: pointer;
+}
+
+.cartPage tfoot div:hover, .inventoryPage tfoot div:hover {
+    background-color: var(--secondary-color);
+    transition: 0.3s;
+}
+
+.cartPage tbody ul, .inventoryPage tbody ul {
+    list-style: none;
+}
+
+
+/* Error 404 CSS */
+.errorPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.errorPage div {
+    text-align: center;
+    width: 80%;
+    padding: 5vw 0;
+    background-color: var(--tertiary-color);
+    color: white;
+}
+
+.errorPage div h1 {
+    font-size: 5rem;
+    font-weight: bold;
+}
+
+.errorPage div p {
+    font-size: 2rem;
+    font-weight: bold;
 }

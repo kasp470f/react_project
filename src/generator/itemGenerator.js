@@ -1,25 +1,26 @@
-import { types, rarities } from "./itemText";
+import { types, rarities, itemNames, itemDescriptions } from "./itemData";
 
-function RandomItem(uniqueID) {
+export function RandomItem(uniqueID) {
     let type = types[Math.floor(Math.random() * types.length)];
     let rarity = rarities[Math.floor(Math.random() * rarities.length)];
-    let name = type
-    let price = Math.floor(Math.random() * 100) + 1;
+    let name = itemNames[type][Math.floor(Math.random() * itemNames[type].length)];
+    let amount = (type === "Gem" || type === "Meat" || type === "Potion" || type === "Drop") ? Math.floor(Math.random() * 10) + 1 : 1;
+    let description = itemDescriptions[name];
+    let price = PriceGen(rarity);
 
     return {
         id: uniqueID,
+        name: name,
         type: type,
         rarity: rarity,
-        name: name,
         price: price,
-        stats: [],
-        amount: 0,
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer et ante ac ante luctus congue. Sed tempor, dolor vulputate consectetur dapibus, nibh magna dapibus nisl, vel ornare odio nibh et nisl.",
-        icon: type,
+        amount: amount,
+        description: description,
+        icon: type.toLowerCase() + ".png",
     };
 }
 
-function RandomItemCollection(count) {
+export function RandomItemCollection(count) {
     let items = [];
     for (let i = 0; i < count; i++) {
         items.push(RandomItem(i));
@@ -27,4 +28,27 @@ function RandomItemCollection(count) {
     return items;
 }
 
-export default RandomItemCollection;
+function PriceGen(rarity) {
+    let price = 0;
+    switch (rarity) {
+        case "Common":
+            price = Math.floor(Math.random() * 100) + 1;
+            break;
+        case "Uncommon":
+            price = Math.floor(Math.random() * 100) + 101;
+            break;
+        case "Rare":
+            price = Math.floor(Math.random() * 100) + 201;
+            break;
+        case "Epic":
+            price = Math.floor(Math.random() * 100) + 301;
+            break;
+        case "Legendary":
+            price = Math.floor(Math.random() * 100) + 401;
+            break;
+        default:
+            price = Math.floor(Math.random() * 100) + 1;
+            break;
+    }
+    return price;
+}
