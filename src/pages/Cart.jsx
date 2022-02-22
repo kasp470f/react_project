@@ -50,7 +50,7 @@ export function Cart() {
     }
 }
 
-export function ItemRow(props) {
+function ItemRow(props) {
     return (
         <tr>
             <td>{props.name}</td>

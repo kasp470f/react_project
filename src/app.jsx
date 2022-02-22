@@ -41,7 +41,7 @@ class App extends React.Component {
                     return item;
                 }),
             });
-        }, Math.floor(Math.random() * + 2000) + 0);
+        }, Math.floor(Math.random() * + 2000) + 1000);
     }
 
     onSelect(item) {
