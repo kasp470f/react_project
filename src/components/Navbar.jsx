@@ -1,7 +1,7 @@
 import React from 'react';
 import '../stylesheet.css';
 import { Link } from 'react-router-dom';
-import {CartList} from './cartList';
+import { CartList } from './cartList';
 
 function Navbar(props) {
     return (

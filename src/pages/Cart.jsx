@@ -9,7 +9,7 @@ export function Cart() {
             totalSum += item.price;
         });
         return (
-            <div className='cartInfo'>
+            <div className='cartPage'>
                 <table>
                     <thead>
                         <tr>
@@ -34,6 +34,13 @@ export function Cart() {
                             <td></td>
                             <td>Total: {totalSum} gold</td>
                         </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><div>Checkout</div></td>
+                        </tr>
                     </tfoot>
                 </table>
             </div>
@@ -54,7 +61,7 @@ export function ItemRow(props) {
         </tr>);
 }
 
-export function UpdateCartText() {
+export function updateCartText() {
     let cartItem = document.getElementsByClassName('shopping_cart')[0];
     cartItem.textContent = `Cart 🛒 (${CartList.length})`;
 };
