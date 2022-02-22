@@ -9,7 +9,7 @@ import Navbar from './components/Navbar';
 import Shop from './pages/Shop';
 import { Cart } from './pages/Cart';
 import Details from './pages/Details';
-import Inventory from './pages/Inventory';
+import {Inventory} from './pages/Inventory';
 import Error404 from './pages/Error404';
 
 class App extends React.Component {
@@ -22,6 +22,7 @@ class App extends React.Component {
         }
         this.onSelect = this.onSelect.bind(this);
         this.onClose = this.onClose.bind(this);
+        this.onCheckOut = this.onCheckOut.bind(this);
     }
 
     componentDidMount() {
@@ -50,6 +51,17 @@ class App extends React.Component {
         this.setState({ selection: undefined });
     }
 
+    onCheckOut(removedItems) {
+        let items = this.state.items;
+        removedItems.forEach(item => {
+            let index = items.findIndex(i => i.id === item[0].id);
+            if (index !== -1) {
+                items[index] = RandomItem(item[0].id);
+            }
+        });
+        this.setState({ items: items });
+    }
+
     render() {
         return (
             <>
@@ -60,7 +72,7 @@ class App extends React.Component {
                         <Routes>
                             <Route path='/' exact element={<Shop items={this.state.items} onSelect={this.onSelect} />} />
                             <Route path='/inventory' exact element={<Inventory />} />
-                            <Route path='/cart' exact element={<Cart cart={this.state.cart}/>} />
+                            <Route path='/cart' exact element={<Cart onCheckOut={this.onCheckOut}/>} />
                             <Route path='/details/:id' exact element={<Details item={this.state.selection} />} />
                             
                             {/* If path is not correct, send to error 404 page*/}

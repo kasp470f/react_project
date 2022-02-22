@@ -47,7 +47,7 @@ function Details(props) {
 }
 
 function addItem(item) {
-    if(!CartList.find(item => item.id === item.id)) {
+    if(!CartList.find(it => it.id === item.id)) {
         let boughtItem = Object.assign(
             { key: CartKey()},
             { ...item }
