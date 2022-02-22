@@ -47,7 +47,7 @@ function Details(props) {
 }
 
 function addItem(item) {
-    let boughtItem = Object.assisgn(
+    let boughtItem = Object.assign(
         { key: CartKey()},
         { ...item }
         );
