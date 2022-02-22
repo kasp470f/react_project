@@ -300,16 +300,17 @@ export let itemDescriptions = {
     "Amulet of Wisdom": "An amulet which will increase the wisdom of the wearer. It is very valuable",
 
     // Potions
-    "Potion of Health": "A potion which will restore the health of whoever drinks it. It is very valuable",
-    "Potion of Mana": "A potion which will restore the mana of whoever drinks it. It is very valuable",
-    "Potion of Stamina": "A potion which will restore the stamina of whoever drinks it. It is very valuable",
-    "Potion of Strength": "A potion which will increase the strength of whoever drinks it. It is very valuable",
-    "Potion of Defense": "A potion which will increase the defense of whoever drinks it. It is very valuable",
-    "Potion of Attack": "A potion which will increase the attack of whoever drinks it. It is very valuable",
-    "Potion of Speed": "A potion which will increase the speed of whoever drinks it. It is very valuable",
-    "Potion of Dexterity": "A potion which will increase the dexterity of whoever drinks it. It is very valuable",
-    "Potion of Vitality": "A potion which will increase the vitality of whoever drinks it. It is very valuable",
-    "Potion of Wisdom": "A potion which will increase the wisdom of whoever drinks it. It is very valuable",
+    "Health Potion": "A potion which will restore the health of whoever drinks it. It is very valuable",
+    "Mana Potion": "A potion which will restore the mana of whoever drinks it. It is very valuable",
+    "Stamina Potion": "A potion which will restore the stamina of whoever drinks it. It is very valuable",
+    "Strength Potion": "A potion which will increase the strength of whoever drinks it. It is very valuable",
+    "Magic Potion": "A potion which will increase the magic of whoever drinks it. It is very valuable",
+    "Defense Potion": "A potion which will increase the defense of whoever drinks it. It is very valuable",
+    "Attack Potion": "A potion which will increase the attack of whoever drinks it. It is very valuable",
+    "Speed Potion": "A potion which will increase the speed of whoever drinks it. It is very valuable",
+    "Dexterity Potion": "A potion which will increase the dexterity of whoever drinks it. It is very valuable",
+    "Vitality Potion": "A potion which will increase the vitality of whoever drinks it. It is very valuable",
+    "Wisdom Potion": "A potion which will increase the wisdom of whoever drinks it. It is very valuable",
 
     // Drops
     "Goblin Leather": "A piece of leather from a goblin. It is very valuable and can be used to craft items.",
