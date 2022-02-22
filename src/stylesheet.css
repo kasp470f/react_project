@@ -297,23 +297,29 @@ body {
 }
 
 /* Cart CSS */
-.detailsInfo table {
+.cartInfo {
+    text-align: center;
+    background-color: var(--tertiary-color);
+    padding: 10px;
+}
+
+.cartInfo table {
     width: 90%;
     color: white;
 }
 
-.detailsInfo table th {
+.cartInfo table th {
     font-weight: bold;
     font-size: large;
     border-bottom: 1px solid var(--primary-color);
 }
 
-.detailsInfo table td {
+.cartInfo table td {
     font-weight: normal;
     font-size: medium;
 }
 
-.detailsInfo table tfoot td{
+.cartInfo table tfoot td{
     font-weight: bold;
     font-size: large;
     border-top: 1px solid var(--primary-color);
