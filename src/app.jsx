@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes, useNavigate } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { RandomItemCollection, RandomItem } from "./generator/itemGenerator";
 import './stylesheet.css';
 import { removeTimeoutItem } from './components/cartList';
